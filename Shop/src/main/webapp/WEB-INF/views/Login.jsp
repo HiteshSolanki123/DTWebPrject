@@ -3,13 +3,13 @@
          <form class="form-horizontal" action="/examples/actions/confirmation.php" method="post">
         <div class="form-group">
             <label for="inputUsername" class="control-label col-xs-2">Username</label>
-            <div class="col-xs-10">
+            <div class="col-xs-2">
                 <input type="text" class="form-control" id="inputUsername" placeholder="Username" required>
             </div>
         </div>
         <div class="form-group">
             <label for="inputPassword" class="control-label col-xs-2">Password</label>
-            <div class="col-xs-10">
+            <div class="col-xs-2">
                 <input type="password" class="form-control" id="inputPassword" placeholder="Password" required>
             </div>
         </div>
@@ -28,5 +28,5 @@
         
          </form>
 
-   
+   <br></br><br></br><br></br><br></br><br></br><br></br><br></br>
 <jsp:include page="Footer.jsp"></jsp:include>

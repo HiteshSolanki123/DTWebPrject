@@ -17,16 +17,18 @@
         <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="${cp}/Home">NIITMart.com</a>
+      <a class="navbar-brand" href="${cp}/Home">Shopping Zone</a>
     </div>
     <ul class="nav navbar-nav navbar-right">
       <li class="active"><a href="${cp}/Home"><span class="glyphicon glyphicon-home">Home</span></a></li>
      
-      <li><a href="${cp}/AboutUs"><span class="glyphicon glyphicon-about-us">About Us</span></a></li>
-      <li><a href="${cp}/ContactUs"><span class="glyphicon glyphicon-contact-us">Contact Us</span></a></li>
+      
       <li><a href="${cp}/Registration"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
       <li><a href="${cp}/Login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-      <li><a href="${cp}/Basket">Basket</a></li>
+      <li><a href="${cp}/Category"><span class="glyphicon glyphicon-category"></span> Category</a></li>
+      <li><a href="${cp}/Basket"><span class="glyphicon glyphicon-shopping-cart"></span> &nbsp Basket</a></li>
+      <li><a href="${cp}/AboutUs"><span class="glyphicon glyphicon-about-us">About Us</span></a></li>
+      <li><a href="${cp}/ContactUs"><span class="glyphicon glyphicon-contact-us">Contact Us</span></a></li>    
     </ul>
   </div>
 </nav>

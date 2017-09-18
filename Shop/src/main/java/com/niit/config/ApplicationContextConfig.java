@@ -36,18 +36,13 @@ public class ApplicationContextConfig {
 	    	properties.put("hibernate.dialect", "org.hibernate.dialect.H2Dialect");
 	    	properties.put("hibernate.hbm2ddl.auto", "update");
 	    	return properties;
-	    }
-	    
+	    }	    
 	    @Autowired
 	    @Bean(name = "sessionFactory")
 	    public SessionFactory getSessionFactory(DataSource dataSource) {
 	    	LocalSessionFactoryBuilder sessionBuilder = new LocalSessionFactoryBuilder(dataSource);
 	    	sessionBuilder.addProperties(getHibernateProperties());
-	
-	    	sessionBuilder.addAnnotatedClasses(Product.class);
-	    	sessionBuilder.addAnnotatedClasses(Supplier.class);
-	    	sessionBuilder.addAnnotatedClasses(User.class);
-
+	    	sessionBuilder.scanPackages("com.niit.model");
 	    	return sessionBuilder.buildSessionFactory();
 	    }
 	    

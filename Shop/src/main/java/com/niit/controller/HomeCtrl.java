@@ -44,5 +44,11 @@ public class HomeCtrl
 		model.addAttribute("message", "Website Info");
 		return "ContactUs";
 	}
+	@RequestMapping("/Category")
+	public  String category(Model model)
+	{
+		model.addAttribute("message", "Website Info");
+		return "Category";
+	}
 }
 
