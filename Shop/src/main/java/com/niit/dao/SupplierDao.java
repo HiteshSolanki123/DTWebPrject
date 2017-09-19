@@ -10,7 +10,7 @@ public interface SupplierDao
 	public void update(Supplier p);
 	public Supplier getById(int id);
 	public void delete(int id);
-	public boolean save(Supplier spplier);
+	public boolean save(Supplier supplier);
 	public Supplier getByName(String Name );
 
 }

@@ -50,5 +50,11 @@ public class HomeCtrl
 		model.addAttribute("message", "Website Info");
 		return "Category";
 	}
+	@RequestMapping("/Helmets")
+	public  String helmets(Model model)
+	{
+		model.addAttribute("message", "login here");
+		return "Helmets";
+	}
 }
 

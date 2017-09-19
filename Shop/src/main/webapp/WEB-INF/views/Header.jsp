@@ -17,7 +17,7 @@
         <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="${cp}/Home">Shopping Zone</a>
+      <a class="navbar-brand" href="${cp}/Home">Bikers Boom</a>
     </div>
     <ul class="nav navbar-nav navbar-right">
       <li class="active"><a href="${cp}/Home"><span class="glyphicon glyphicon-home">Home</span></a></li>

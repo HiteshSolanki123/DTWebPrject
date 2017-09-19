@@ -101,6 +101,7 @@
         <div class="panel-body"><a href="/Jackets"><img src=${cp}/resources/images/jacket.jpg class="img-responsive" style="height:150px; width:250px" alt="Image"></div>
         <div class="panel-footer"><b><center>Jackets</center></b></a></div>
       </div>
+      
   </div>
 </div><br><br>
 
