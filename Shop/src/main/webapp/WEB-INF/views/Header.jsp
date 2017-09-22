@@ -23,7 +23,7 @@
       <li class="active"><a href="${cp}/Home"><span class="glyphicon glyphicon-home">Home</span></a></li>
      
       
-      <li><a href="${cp}/Registration"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="${cp}/Registration/"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
       <li><a href="${cp}/Login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
       <li><a href="${cp}/Category"><span class="glyphicon glyphicon-category"></span> Category</a></li>
       <li><a href="${cp}/Basket"><span class="glyphicon glyphicon-shopping-cart"></span> &nbsp Basket</a></li>

@@ -1,106 +1,102 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
-</head>
+
+
+<style>
+form {
+	border: 3px solid #f1f1f1;
+}
+
+input[type=text], input[type=password] {
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+}
+
+button {
+	background-color: #4CAF50;
+	color: white;
+	width: auto;
+	padding: 10px 18px;
+	border: none;
+	cursor: pointer;
+}
+
+button:hover {
+	opacity: 0.8;
+}
+
+.cancelbtn {
+	width: auto;
+	padding: 10px 18px;
+	background-color: #f44336;
+}
+
+.container {
+	padding: 16px;
+}
+
+span.psw {
+	float: right;
+	padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+	span.psw {
+		display: block;
+		float: none;
+	}
+	.cancelbtn {
+		width: 100%;
+	}
+}
+</style>
 <body>
-	<div class="boxProd3" id="135894712" lang="">
 
-		<div class="singleBoxMarca"
-			onmouseover="document.getElementById('BoxPrice_135894712').style.borderColor='#cecece'"
-			onmouseout="document.getElementById('BoxPrice_135894712').style.borderColor='#FFFFFF'; document.getElementById('BoxPrice_135894712').style.borderTop='1px solid #cecece'">
+	<h3 align="center">
+		<b>Registration Form</b>
+	</h3>
 
-			<div class="BoxImage"
-				onmouseover="javascript:activar_segunda(135894712)"
-				onmouseout="javascript:desactivar_segunda(135894712)">
-				<a id="boximage1_135894712"
-					href="/motorcycle-equipment/agv-ax-8-dual-carbon-namib/135894712/p"
-					title="Agv Ax 8 Dual Carbon Namib"
-					onclick="product_EnHanced_click('agv-ax-8-dual-carbon-namib','135894712','agv','280.47','/motorcycle-equipment/agv-ax-8-dual-carbon-namib/135894712/p')"><img
-					alt="Agv Ax 8 Dual Carbon Namib" border="0" class="lazy"
-					data-src="https://drms3v40st3o6.cloudfront.net/l/13589/135894712/agv-ax-8-dual-carbon-namib.jpg"
-					src="https://drms3v40st3o6.cloudfront.net/l/13589/135894712/agv-ax-8-dual-carbon-namib.jpg"
-					data-camara="https://drms3v40st3o6.cloudfront.net/l/13589/135894712_2/agv-ax-8-dual-carbon-namib.jpg"
-					id="foto_135894712"></a>
+	<form action="">
 
-			</div>
-			<div class="BoxPrice" id="BoxPrice_135894712"
-				style="border-color: rgb(206, 206, 206) rgb(255, 255, 255) rgb(255, 255, 255); border-top-width: 1px; border-top-style: solid;">
-				<p class="BoxPriceName">
-					<a
-						href="/motorcycle-equipment/agv-ax-8-dual-carbon-namib/135894712/p"
-						title="Agv Ax 8 Dual Carbon Namib"
-						onclick="product_EnHanced_click('agv-ax-8-dual-carbon-namib','135894712','agv','280.47','/motorcycle-equipment/agv-ax-8-dual-carbon-namib/135894712/p')">Agv
-						Ax 8 Dual Carbon Namib</a>
-				</p>
-				<p class="BoxPriceValor">21492.95 Rs</p>
-				<div class="tallas_qw">
-					<ul>
-						<li><a
-							href="/motorcycle-equipment/agv-ax-8-dual-carbon-namib/135894712/p?tqw=XS"
-							class="cada_talla_qw" rel="nofollow">XS</a></li>
-					</ul>
-						<div class="boxProd1" id="135894708" lang="">
-
-		<div class="singleBoxMarca"
-			onmouseover="document.getElementById('BoxPrice_135894708').style.borderColor='#cecece'"
-			onmouseout="document.getElementById('BoxPrice_135894708').style.borderColor='#FFFFFF'; document.getElementById('BoxPrice_135894708').style.borderTop='1px solid #cecece'">
-
-			<div class="BoxImage"
-				onmouseover="javascript:activar_segunda(135894708)"
-				onmouseout="javascript:desactivar_segunda(135894708)">
-				<a id="boximage1_135894708"
-					href="/motorcycle-equipment/agv-ax-8-carbon/135894708/p"
-					title="Agv Ax 8 Carbon"
-					onclick="product_EnHanced_click('agv-ax-8-carbon','135894708','agv','305.7','/motorcycle-equipment/agv-ax-8-carbon/135894708/p')"><img
-					alt="Agv Ax 8 Carbon" border="0" class="lazy"
-					data-src="https://drms3v40st3o6.cloudfront.net/l/13589/135894708/agv-ax-8-carbon.jpg"
-					src="https://drms3v40st3o6.cloudfront.net/l/13589/135894708/agv-ax-8-carbon.jpg"
-					data-camara="https://drms3v40st3o6.cloudfront.net/l/13589/135894708_2/agv-ax-8-carbon.jpg"
-					id="foto_135894708"></a>
-
-			</div>
-			<div class="BoxPrice" id="BoxPrice_135894708"
-				style="border-color: rgb(206, 206, 206) rgb(255, 255, 255) rgb(255, 255, 255); border-top-width: 1px; border-top-style: solid;">
-				<p class="BoxPriceName">
-					<a href="/motorcycle-equipment/agv-ax-8-carbon/135894708/p"
-						title="Agv Ax 8 Carbon"
-						onclick="product_EnHanced_click('agv-ax-8-carbon','135894708','agv','305.7','/motorcycle-equipment/agv-ax-8-carbon/135894708/p')">Agv
-						Ax 8 Carbon</a>
-				</p>
-				<p class="BoxPriceValor">23425.95 Rs</p>
-				<div class="tallas_qw">
-					<ul>
-						<li><a
-							href="/motorcycle-equipment/agv-ax-8-carbon/135894708/p?tqw=XS"
-							class="cada_talla_qw" rel="nofollow">XS</a></li>
-						<li><a
-							href="/motorcycle-equipment/agv-ax-8-carbon/135894708/p?tqw=S"
-							class="cada_talla_qw" rel="nofollow">S</a></li>
-						<li><a
-							href="/motorcycle-equipment/agv-ax-8-carbon/135894708/p?tqw=M"
-							class="cada_talla_qw" rel="nofollow">M</a></li>
-						<li><a
-							href="/motorcycle-equipment/agv-ax-8-carbon/135894708/p?tqw=L"
-							class="cada_talla_qw" rel="nofollow">L</a></li>
-						<li><a
-							href="/motorcycle-equipment/agv-ax-8-carbon/135894708/p?tqw=XL"
-							class="cada_talla_qw" rel="nofollow">XL</a></li>
-					</ul>
+		<div class="container">
+			<div class="row">
+				<!-- row Start -->
+				<div class="col-lg-3">
+					<!-- empty column for space from right -->
 				</div>
+				<div class="col-lg-6">
+					<b>First Name</b> <input type="text" placeholder="Enter First name"
+						name="uname" required> <label><b>LastName</b></label> <input
+						type="text" placeholder="Enter Last name" name="uname" required>
+					<label><b>Contact no.</b></label> <input type="text"
+						placeholder="Enter contact no" name="uname" required> <label><b>Username</b></label>
+					<input type="text" placeholder="Enter Username" name="uname"
+						required> <label><b>Password</b></label> <input
+						type="password" placeholder="Enter Password" name="psw" required>
+
+					<div class="control-group">
+						<!-- Password -->
+						<label class="control-label" for="password_confirm">Password
+							(Confirm)</label>
+						<div class="controls">
+							<input type="password" id="password_confirm"
+								name="password_confirm" placeholder="Retype password"
+								class="input-xlarge">
+							<p class="help-block">Please confirm password</p>
+						</div>
+					</div>
+
+					<button type="submit">Register</button>
+					<button type="button" class="cancelbtn">Cancel</button>
+					<input type="checkbox" checked="checked"> Remember me
+				</div>
+			</div>
+			<div class="container">
+				<span class="psw">Forgot <a href="#">password?</a></span>
 			</div>
 		</div>
 
-	</div>
-				</div>
-			</div>
-		</div>
-
-	</div>
-	
-
-</body>
-</html>
+	</form>

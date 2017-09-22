@@ -53,5 +53,7 @@ public class ApplicationContextConfig {
 			HibernateTransactionManager transactionManager = new HibernateTransactionManager(sessionFactory);
 			return transactionManager;
 		}
+		
+		
     
 }

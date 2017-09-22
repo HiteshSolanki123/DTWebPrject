@@ -1,35 +1,40 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<c:set var="cp" value="${pageContext.request.contextPath}" />
 <jsp:include page="Header.jsp"></jsp:include>
-        <h1>Create an Account</h1>
-         <form class="form-horizontal" action="/examples/actions/confirmation.php" method="post">
-        <div class="form-group">
-            <label for="inputName" class="control-label col-xs-2">Name</label>
-            <div class="col-xs-2">
-                <input type="text" class="form-control" id="inputName" placeholder="Name" required>
-            </div>
-        </div>
-             <div class="form-group">
-            <label for="inputContact" class="control-label col-xs-2">Mobile no</label>
-            <div class="col-xs-2">
-                <input type="text" class="form-control" id="inputContact" placeholder="Mobile no" required>
-            </div>
-        </div>
-             <div class="form-group">
-            <label for="inputEmail" class="control-label col-xs-2">Email</label>
-            <div class="col-xs-2">
-                <input type="email" class="form-control" id="inputEmail" placeholder="Email" required>
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="inputPassword" class="control-label col-xs-2">Password</label>
-            <div class="col-xs-2">
-                <input type="password" class="form-control" id="inputPassword" placeholder="Atleast 6 Character" required>
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="col-xs-offset-2 col-xs-10">
-                <button type="submit" class="btn btn-primary">Create Account</button>
-            </div>
-        </div>
-    </form>
-    <br></br><br></br><br></br><br></br><br></br><br></br>
+
+
+
+	<h1>Registration</h1>
+	
+	<form:form  modelAttribute="user" method="post" action="${cp}/Registration/insert"  >
+	<div class=col-lg-3>
+		<div><form:hidden path="uid"></form:hidden></div>
+		<div><form:hidden path="enabled"></form:hidden></div>
+		<div><form:hidden path="role"></form:hidden></div>
+		<div>
+			<form:label path="name">Name:</form:label> 	
+			<form:input path="name" />
+		</div>
+		
+		<div>
+			<form:label path="email">Email:</form:label> 	
+			<form:input path="email" />
+		</div>
+		<div>
+			<form:label path="password">Password:</form:label> 	
+			<form:input type="password" path ="password" />
+		</div>
+		<button type="submit" class="btn btn-lg btn-info">Submit</button>
+		<button type="reset" class="btn btn-lg btn-info">Cancel</button>
+</div>
+
+	</form:form>
+
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
 <jsp:include page="Footer.jsp"></jsp:include>

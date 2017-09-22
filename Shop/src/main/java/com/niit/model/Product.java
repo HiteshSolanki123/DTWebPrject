@@ -24,7 +24,8 @@ public class Product {
 	String desc;
     private String category_id;  
 	private String supplier_id;
-    public String getSupplier_id() {
+    public String getSupplier_id() 
+    {
 		return supplier_id;
 	}
 	public void setSupplier_id(String supplier_id) {

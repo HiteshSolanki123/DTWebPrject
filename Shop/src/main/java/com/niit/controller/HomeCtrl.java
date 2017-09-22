@@ -19,12 +19,7 @@ public class HomeCtrl
 		model.addAttribute("message", "login here");
 		return "Login";
 	}
-	@RequestMapping("/Registration")
-	public  String Registration(Model model)
-	{
-		model.addAttribute("message", "New User Register Here");
-		return "Registration";
-	}
+	
 	@RequestMapping("/Basket")
 	public  String basket(Model model)
 	{
