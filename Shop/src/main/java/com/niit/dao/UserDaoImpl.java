@@ -5,6 +5,7 @@ import java.util.List;
 import javax.transaction.Transactional;
 
 import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import com.niit.model.User;
 
@@ -13,11 +14,12 @@ import com.niit.model.User;
 public class UserDaoImpl implements UserDao 
   
 {
+	@Autowired
 	private SessionFactory sessionFactory;
  
 	@Override
 	public void insertUser(User user) {
-		sessionFactory.getCurrentSession().persist(user);
+		sessionFactory.getCurrentSession().save(user);
 	}
 
 	@Override

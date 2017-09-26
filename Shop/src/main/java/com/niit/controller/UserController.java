@@ -1,6 +1,7 @@
 package com.niit.controller;
 
 import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,11 +15,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.niit.dao.UserDao;
 import com.niit.model.User;
-
-
-
-
-
 @Controller
 @RequestMapping("/Registration")
 public class UserController 
@@ -36,8 +32,9 @@ public class UserController
 		return "Registration";
 	}
 	@PostMapping(value = "/insert")
-	public String insert(@ModelAttribute("user") User user, Model model,BindingResult results)
+ 	public String insert(@Valid @ModelAttribute("user") User user, Model model,BindingResult results)
 	{
+		
 			user.setRole("user");
 			user.setEnabled(true);
 			userDAO.insertUser(user);

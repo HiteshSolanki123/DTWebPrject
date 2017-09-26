@@ -1,6 +1,6 @@
 <jsp:include page="Header.jsp"></jsp:include>
         <h1>Sign-Up</h1>
-         <form class="form-horizontal" action="/examples/actions/confirmation.php" method="post">
+         <form class="form-horizontal" action="Login" method="post">
         <div class="form-group">
             <label for="inputUsername" class="control-label col-xs-2">Username</label>
             <div class="col-xs-2">
@@ -16,7 +16,7 @@
         <div class="form-group">
             <div class="col-xs-offset-2 col-xs-10">
                 <div class="checkbox">
-                    <label><input type="checkbox"> Remember me</label>
+                    <label><input type="checkbox">Remember me</label>
                 </div>
             </div>
         </div>
