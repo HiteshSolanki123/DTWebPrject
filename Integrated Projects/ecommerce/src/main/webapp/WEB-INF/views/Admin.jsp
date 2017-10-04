@@ -9,10 +9,9 @@
 
 </html>
 
-<h1>Registration</h1>
+<h1>Administration</h1>
 
-<form:form modelAttribute="product" method="post"
-	action="${cp}/Admin/insert">
+<form:form modelAttribute="product" method="post" action="${cp}/Admin/insert">
 	<div class=col-lg-3>
 		<div>
 			<form:hidden path="pid"></form:hidden>
@@ -20,6 +19,10 @@
 		<div>
 			<form:hidden path="supplier_id"></form:hidden>
 		</div>
+		<div>
+			<form:hidden path="category_id"></form:hidden>
+		</div>
+		
 		<div>
 			<form:label path="price">Price:</form:label>
 			<form:input type="price" path="price" />
@@ -34,14 +37,6 @@
 			<div>
 				<form:label path="desc">Description</form:label>
 				<form:input path="desc" />
-			</div>
-			<div>
-				<form:label path="suppliername">Supplier Name</form:label>
-				<form:input path="suppliername" />
-			</div>
-			<div>
-				<form:label path="category">Category</form:label>
-				<form:input path="category" />
 			</div>
 		</div>
 		<button type="update" class="btn btn-lg btn-info">Update</button>

@@ -2,10 +2,6 @@ package com.niit.controller;
 
 import javax.servlet.http.HttpSession;
 
-import javax.validation.Valid;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Repository;
@@ -14,38 +10,33 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
 
-import com.niit.dao.UserDao;
-import com.niit.model.User;
+import com.niit.dao.ProductDao;
+import com.niit.model.Product;
 
 @Controller
 @Repository
-@RequestMapping("/Registration")
-public class UserController {
+@RequestMapping("/Admin")
+public class AdminController {
 	@Autowired
-	UserDao userDAO;
+	ProductDao productDAO;
 	@Autowired
-	User user;
-	@Autowired
+	Product product;
 	HttpSession session;
 
 	@RequestMapping("/")
-	public String Registration(Model model) {
-		model.addAttribute("user", new User());
-		return "Registration";
+	public String Admin(Model model) {
+		model.addAttribute("product", new Product());
+		return "Admin";
 	}
 
 	@PostMapping(value = "/insert")
-	public String insert(@ModelAttribute("user") User user, Model model, BindingResult results) {
+	public String insert(@ModelAttribute("product") Product product, Model model, BindingResult results) {
 		{
 
-			user.setRole("user");
-			user.setEnabled(true);
-			userDAO.insertUser(user);
-			return "redirect:/Login";
+			productDAO.insertProduct(product);
+			return "redirect:/Admin/";
 
 		}
 	}
-
 }

@@ -51,9 +51,4 @@ public class HomeCtrl {
 		return "Helmets";
 	}
 
-	@RequestMapping("/Admin")
-	public String admin(Model model) {
-		model.addAttribute("message", "login here");
-		return "Admin";
-	}
 }

@@ -37,7 +37,7 @@
 					class="glyphicon glyphicon-about-us">About Us</span></a></li>
 			<li><a href="${cp}/ContactUs"><span
 					class="glyphicon glyphicon-contact-us">Contact Us</span></a></li>
-			<li><a href="${cp}/Admin"><span
+			<li><a href="${cp}/Admin/"><span
 					class="glyphicon glyphicon-admin">Admin</span></a></li>
 
 		</ul>

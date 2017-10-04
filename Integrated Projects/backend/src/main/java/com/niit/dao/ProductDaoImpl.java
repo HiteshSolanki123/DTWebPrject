@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.niit.model.Product;
-import com.niit.model.User;
+
 
 @Repository("productDAO")
 @Transactional
@@ -18,9 +18,7 @@ public class ProductDaoImpl implements ProductDao
 	@Autowired	
 	private SessionFactory sessionFactory;
 	
-	public void insertProduct(Product product) {
-		sessionFactory.getCurrentSession().persist(product);
-	}
+	
 	public List<Product> getAll() {
 		// TODO Auto-generated method stub
 		return null;
@@ -45,6 +43,17 @@ public class ProductDaoImpl implements ProductDao
 		// TODO Auto-generated method stub
 		
 	}
+
+	public void insertProduct(Product product) {
+		sessionFactory.getCurrentSession().persist(product);
+		
+	}
+
+	public List<Product> getProductDetails() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
 
 	
 	

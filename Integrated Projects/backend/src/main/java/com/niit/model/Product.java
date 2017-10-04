@@ -22,39 +22,24 @@ public class Product {
 	int quantity;
 	String pname;
 	String desc;  
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private String supplier_id;
 	
-    public String getSupplier_id() 
-    {
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	String category_id;
+	public String getCategory_id() {
+		return category_id;
+	}
+	public void setCategory_id(String category_id) {
+		this.category_id = category_id;
+	}
+	public String getSupplier_id() {
 		return supplier_id;
 	}
 	public void setSupplier_id(String supplier_id) {
 		this.supplier_id = supplier_id;
 	}
-	public String getCategory() {
-		return category;
-	}
-	public void setCategory(String category) {
-		this.category = category;
-	}
-	public String getSupplier() {
-		return suppliername;
-	}
-	public void setSupplier(String supplier) {
-		this.suppliername = supplier;
-	}
-	private String category;
-    private String suppliername;
-    
-	@Transient
-	MultipartFile file;
-	public MultipartFile getFile() {
-		return file;
-	}
-	public void setFile(MultipartFile file) {
-		this.file = file;
-	}
+
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	String supplier_id;
 	public int getPid() {
 		return pid;
 	}
@@ -76,7 +61,6 @@ public class Product {
 	public String getPname() {
 		return pname;
 	}
-	
 	public void setPname(String pname) {
 		this.pname = pname;
 	}
@@ -88,4 +72,4 @@ public class Product {
 	}
 	
 }
-
+	

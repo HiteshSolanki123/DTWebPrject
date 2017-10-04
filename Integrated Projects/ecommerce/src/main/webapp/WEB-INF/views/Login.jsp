@@ -25,6 +25,7 @@
                 <button type="submit" class="btn btn-primary">Login</button>
             </div>
         </div>
+        <input type="hidden" name="${_csrf.parameterName}" value="{_$csrf.token}"/>
         
          </form>
 

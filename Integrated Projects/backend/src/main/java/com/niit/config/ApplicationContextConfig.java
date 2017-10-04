@@ -16,8 +16,10 @@ import org.springframework.orm.hibernate4.HibernateTransactionManager;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import com.niit.dao.ProductDaoImpl;
 import com.niit.dao.UserDaoImpl;
 import com.niit.model.*;
+
 
 @Configuration
 @ComponentScan("com.niit.config")
@@ -55,6 +57,12 @@ public class ApplicationContextConfig {
 	    public UserDaoImpl getUserDao(SessionFactory sessionFactory)
 	    {
 	    	return new UserDaoImpl(sessionFactory);
+	    }
+	    @Autowired
+	    @Bean(name="ProductDaoImpl")
+	    public ProductDaoImpl getProductDao(SessionFactory sessionFactory)
+	    {
+	    	return new ProductDaoImpl();
 	    }
 		@Autowired
 		@Bean(name = "transactionManager")

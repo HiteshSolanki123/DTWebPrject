@@ -15,4 +15,8 @@ public interface ProductDao {
 
 	public void save(Product product);
 
+	public void insertProduct(Product product);
+
+	public List<Product> getProductDetails();
+
 }
