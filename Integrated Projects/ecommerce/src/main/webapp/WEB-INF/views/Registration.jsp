@@ -21,46 +21,49 @@
 </style>
 </html>
 
-<h1>Registration</h1>
+
 
 <form:form modelAttribute="user" method="post"
 	action="${cp}/Registration/insert">
-	<div class=col-lg-3>
-		<div>
-			<form:hidden path="uid"></form:hidden>
-		</div>
-		<div>
-			<form:hidden path="enabled"></form:hidden>
-		</div>
-		<div>
-			<form:hidden path="role"></form:hidden>
-		</div>
-		<div>
-			<form:label path="firstname">First Name:</form:label>
-			<form:input type="firstname" path="firstname" />
-		</div>
-		<div>
-			<form:label path="lastname">Last Name:</form:label>
-			<form:input type="lastname" path="lastname" />
-		</div>
-		<div>
-			<form:label path="phone">Phone No:</form:label>
-			<form:input type="phone" path="phone" />
-			<div>
-				<form:label path="email">Email:</form:label>
-				<form:input path="email" />
-			</div>
-			<div>
-				<form:label path="password">Password:</form:label>
-				<form:input type="password" path="password" />
-			</div>
+	<table align="center">
+		<thead bgcolor="blue">
+			<th colspan="2"><b>REGISTRATION</b></th>
+		</thead>
+		<tr>
+			<td><form:hidden path="uid"></form:hidden></td>
+		</tr>
+		<tr>
+			<td><form:hidden path="enabled"></form:hidden></td>
+		</tr>
+		<tr>
+			<td><form:hidden path="role"></form:hidden></td>
+		</tr>
+		<tr>
+			<td><form:label path="firstname">First Name:</form:label>
+			<form:input type="firstname" path="firstname" /></td>
+		</tr>
+		<tr>
+			<td><form:label path="lastname">Last Name:</form:label>
+			<form:input type="lastname" path="lastname" /></td>
+		</tr>
+		<tr>
+			<td><form:label path="phone">Phone No:</form:label>
+			<form:input type="phone" path="phone" /></td>
+		</tr>
+		<tr>
+			<td><form:label path="email">Email:</form:label>
+			<form:input path="email" /></td>
+		</tr>
+		<tr>
+			<td><form:label path="password">Password:</form:label>
+			<form:input type="password" path="password" /></td>
+		</tr>
 
 
-		</div>
-		<button type="submit" class="btn btn-lg btn-info">Submit</button>
-		<button type="reset" class="btn btn-lg btn-info">Cancel</button>
-	</div>
-
+		<tr>
+		<td><button type="submit" class="btn btn-lg btn-info">Submit</button></td>
+		<td><button type="reset" class="btn btn-lg btn-info">Cancel</button></td>
+		</tr>
 </form:form>
 
 <br></br>

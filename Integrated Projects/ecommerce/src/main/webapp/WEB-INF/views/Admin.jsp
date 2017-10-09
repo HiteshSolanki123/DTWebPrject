@@ -9,38 +9,49 @@
 
 </html>
 
-<h1>Administration</h1>
 
-<form:form modelAttribute="product" method="post" action="${cp}/Admin/insert">
-	<div class=col-lg-3>
-		<div>
-			<form:hidden path="pid"></form:hidden>
-		</div>
-		<div>
-			<form:hidden path="supplier_id"></form:hidden>
-		</div>
-		<div>
-			<form:hidden path="category_id"></form:hidden>
-		</div>
+<form:form modelAttribute="product" method="post"
+	action="${cp}/Admin/insert" enctype="multipart/form-data">
+	
+	<table align="center">
+		<thead bgcolor="blue">
+			<th colspan="2">ADMINISTRATION</th>
+		</thead>
+		<tr>
+			<td><form:hidden path="pid"></form:hidden></td>
+		</tr>
+		<tr>
+			<td><form:hidden path="supplier_id"></form:hidden></td>
+		</tr>
+		<tr>
+			<td><form:hidden path="category_id"></form:hidden></td>
+		</tr>
+
+		<tr>
+			<td><form:label path="price">Price:</form:label> <form:input
+					type="price" path="price" /></td>
+		</tr>
+		<tr>
+			<td><form:label path="quantity">Quantity:</form:label> <form:input
+					type="quantity" path="quantity" /></td>
+		</tr>
+		<tr>
+			<td><form:label path="pname">Product Name:</form:label> <form:input
+					type="pname" path="pname" /></td>
+		</tr>
+		<tr>
+			<td><form:label path="desc">Description</form:label> <form:input
+					path="desc" /></td>
+		</tr>
+		<tr>
+			<td><form:label path="file">Choose File</form:label> <form:input
+					path="file" /></td>
+		</tr>
+		<tr>
+
+		<td><button type="submit" class="btn btn-lg btn-info">Save</button></td>
+		<td><button type="reset" class="btn btn-lg btn-info">Delete</button></td>
 		
-		<div>
-			<form:label path="price">Price:</form:label>
-			<form:input type="price" path="price" />
-		</div>
-		<div>
-			<form:label path="quantity">Quantity:</form:label>
-			<form:input type="quantity" path="quantity" />
-		</div>
-		<div>
-			<form:label path="pname">Product Name:</form:label>
-			<form:input type="pname" path="pname" />
-			<div>
-				<form:label path="desc">Description</form:label>
-				<form:input path="desc" />
-			</div>
-		</div>
-		<button type="update" class="btn btn-lg btn-info">Update</button>
-		<button type="delete" class="btn btn-lg btn-info">Delete</button>
-	</div>
-
+		</tr>
+	</table>
 </form:form>

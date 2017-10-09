@@ -18,7 +18,8 @@
 	
 	<bean id="HandlerMapping" class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping">
 	</bean>
-	
+	<bean id="multipartResolver"
+	class="org.springframework.web.multipart.support.StandardServletMultipartResolver"/>
 	
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">

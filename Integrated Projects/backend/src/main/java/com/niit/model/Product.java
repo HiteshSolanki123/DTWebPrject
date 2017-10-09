@@ -23,6 +23,18 @@ public class Product {
 	String pname;
 	String desc;  
 	
+	/* @Transient
+	private MultipartFile file;
+	
+	
+	 public MultipartFile getFile(){
+		return file;
+		 
+	 }
+	public void setFile(MultipartFile file) {
+		this.file = file;
+	}*/
+
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	String category_id;
 	public String getCategory_id() {
@@ -70,6 +82,13 @@ public class Product {
 	public void setDesc(String desc) {
 		this.desc = desc;
 	}
+	public Object getCode() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	
+	
 	
 }
 	

@@ -1,5 +1,6 @@
 package com.niit.controller;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,9 +32,12 @@ public class AdminController {
 	}
 
 	@PostMapping(value = "/insert")
-	public String insert(@ModelAttribute("product") Product product, Model model, BindingResult results) {
+	public String insert(@ModelAttribute("product") Product product, Model model, BindingResult results,HttpServletRequest request ) {
 		{
-
+			/*if(!product.getFile().getOriginalFilename().equals(""))
+			{
+				FileUploadUtility.uploadFile(request,product.getFile(),product.getCode());
+			}*/
 			productDAO.insertProduct(product);
 			return "redirect:/Admin/";
 
