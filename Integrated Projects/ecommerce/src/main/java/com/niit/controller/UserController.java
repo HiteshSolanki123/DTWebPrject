@@ -52,10 +52,10 @@ public class UserController {
 	@Autowired
 	ProductDao productDAO;
 	
-	@RequestMapping("/login_success")
+	@RequestMapping("/Registration/permitAll")
 	public String loginSuccess(HttpSession session,Model m)
 	{
-		System.out.println("--Login Successful---");
+		
 		
 		String page=null;
 		

@@ -21,7 +21,7 @@ else if(password.length<8)
 	}
 }
 </script>
-         <form class="form-horizontal" action="<c:url value='/j_spring_security_check' />" method="post">
+         <form class="form-horizontal" action="<c:url value='/Registration/permitAll' />" method="post">
         <div class="form-group">
             <label for="inputUsername" class="control-label col-xs-2">User Name</label>
             <div class="col-xs-2">

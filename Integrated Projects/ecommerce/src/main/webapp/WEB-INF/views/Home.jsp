@@ -78,7 +78,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Bikers Shop</title>
 </head>
 <body>
 	<div class=" container-fluid">
@@ -127,7 +127,7 @@ footer {
 											class="img-responsive" style="height: 150px; width: 250px"
 											alt="Image">
 									</div>
-									
+
 									<div class="panel-footer">
 										<b><center>Exhausts</center></b></a>
 									</div>
@@ -203,7 +203,7 @@ footer {
 									<div class="panel-body">
 										<a href="/Shoes"><img src=${cp}/resources/images/shoes.jpg
 											class="img-responsive" style="height: 150px; width: 250px"
-											alt="Image">
+											alt="Image"></a>
 									</div>
 									<div class="panel-footer">
 										<b><center>Shoes</center></b></a>

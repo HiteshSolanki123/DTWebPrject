@@ -9,13 +9,13 @@ public interface ProductDao {
 
 	public void saveOrUpdate(Product product);
 
-	public void delete(String id);
+	public void delete(Product product);
 
 	public Product getById(String id);
 
 	public void save(Product product);
 
-	public void insertProduct(Product product);
+	public void addProduct(Product product);
 
 	public List<Product> getProductDetails();
 

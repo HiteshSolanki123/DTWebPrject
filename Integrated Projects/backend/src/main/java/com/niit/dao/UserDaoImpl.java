@@ -27,22 +27,26 @@ public class UserDaoImpl implements UserDao
 	}
 
 	public User getUserDetails(String email) {
-		// TODO Auto-generated method stub
-		return null;
+		{
+			User user =(User) sessionFactory.getCurrentSession().get(User.class, new String(email));	
+			return user;
+		}
 	}
 
-	public User getUById(int customerId) {
-		// TODO Auto-generated method stub
-		return null;
+	public User getUById(String userId) {
+		{
+			User user =(User) sessionFactory.getCurrentSession().get(User.class, new String(userId));	
+			return user;
+		}
 	}
 
 	public List<User> getAllCustomers() {
-		// TODO Auto-generated method stub
+		sessionFactory.getCurrentSession().createQuery("from User").list();
+
 		return null;
 	}
 
 	public User getCustomerByUsername(String username) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
@@ -57,6 +61,10 @@ public class UserDaoImpl implements UserDao
 	}
 
 	public Object getAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	public User getUById(int customerId) {
 		// TODO Auto-generated method stub
 		return null;
 	}
