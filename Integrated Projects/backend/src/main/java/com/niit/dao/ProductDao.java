@@ -9,7 +9,7 @@ public interface ProductDao {
 
 	public void saveOrUpdate(Product product);
 
-	public void delete(Product product);
+	public void delete(Product pid);
 
 	public Product getById(String id);
 

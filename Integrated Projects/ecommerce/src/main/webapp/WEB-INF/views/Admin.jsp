@@ -6,16 +6,31 @@
 <html>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Administration</title>
+<c:url value="/" var="logoutUrl" />
+	<form action="${logoutUrl}" method="post" id="logoutForm">
+		<input type="hidden" name="${_csrf.parameterName}"
+			value="${_csrf.token}" />
+	</form>
+	<script>
+		function formSubmit() {
+			document.getElementById("logoutForm").submit();
+		}
+	</script>
 
+	<c:if test="${pageContext.request.userPrincipal.name != null}">
+		<h2>
+			Welcome : ${pageContext.request.userPrincipal.name} | <a
+				href="javascript:formSubmit()"> Logout</a>
+		</h2>
+	</c:if>
 </html>
-
-
+<center><h2><b>Administration</b></h2></center>
 <form:form modelAttribute="product" method="post"
 	action="${cp}/Admin/insert" enctype="multipart/form-data">
 	
 	<table align="center">
 		<thead bgcolor="blue">
-			<th colspan="2">ADMINISTRATION</th>
+			
 		</thead>
 		<tr>
 			<td><form:hidden path="pid"></form:hidden></td>
@@ -44,10 +59,6 @@
 					path="desc" /></td>
 		</tr>
 		<tr>
-			<td><form:label path="file">Choose File</form:label> <form:input
-					path="file" /></td>
-		</tr>
-		<tr>
 
 		<td><button type="submit" class="btn btn-lg btn-info">Save</button></td>
 		<td><button type="reset" class="btn btn-lg btn-info">Delete</button></td>
@@ -55,3 +66,5 @@
 		</tr>
 	</table>
 </form:form>
+
+

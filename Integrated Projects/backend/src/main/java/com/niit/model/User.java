@@ -7,8 +7,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
+import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.stereotype.Component;
 
@@ -20,9 +22,11 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int uid;
 	@Column(unique = true, name = "email")
-	@NotEmpty
+	/*@NotEmpty*/
+	/*@Email(message="enter valid email address")*/
 	private String email;
-	
+	/*@NotEmpty
+	@Size(min=10,max=10, message="enter the correct mobile no")*/
 	private String phone;
 
 	public String getPhone() {
@@ -48,11 +52,14 @@ public class User {
 	public void setLastname(String lastname) {
 		this.lastname = lastname;
 	}
-
+	/*@NotNull
+	@Pattern(regexp = "^[0-9]*")*/
 	private String firstname;
+	/*@NotEmpty
+	@Pattern(regexp = "^[0-9]*")*/
 	private String lastname;
 	@Column(name = "password")
-	@NotNull
+	/*@Max(8)*/
 	private String password;
 
 	@Column(name = "enabled")

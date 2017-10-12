@@ -32,15 +32,31 @@ public class ProductController {
 	}
 
 	@PostMapping(value = "/insert")
-	public String insert(@ModelAttribute("product") Product product, Model model, BindingResult results,HttpServletRequest request ) {
+	public String insert(@ModelAttribute("product") Product product, Model model, BindingResult results,
+			HttpServletRequest request) {
 		{
-			/*if(!product.getFile().getOriginalFilename().equals(""))
-			{
-				FileUploadUtility.uploadFile(request,product.getFile(),product.getCode());
-			}*/
 			productDAO.addProduct(product);
 			return "redirect:/Admin/";
 
 		}
+	}
+
+	@PostMapping(value = "/delete")
+	public String delete(@ModelAttribute("product") Product product, Model model, BindingResult results,
+			HttpServletRequest request) {
+		{
+			
+			productDAO.delete(product);
+			return "redirect:/Admin/";
+
+		}
+	}
+
+	@PostMapping(value = "/saveOrUpdate")
+	public String saveOrUpdate(@ModelAttribute("product") Product product, Model model, BindingResult results,
+			HttpServletRequest request) {
+		productDAO.saveOrUpdate(product);
+		return "redirect:/Admin/";
+
 	}
 }

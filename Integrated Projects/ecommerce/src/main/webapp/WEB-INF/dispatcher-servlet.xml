@@ -16,6 +16,7 @@
 	<context:component-scan base-package="com.niit.config"/>
 	<context:component-scan base-package="com.niit.model"/>
 	
+	
 	<bean id="HandlerMapping" class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping">
 	</bean>
 	<bean id="multipartResolver"

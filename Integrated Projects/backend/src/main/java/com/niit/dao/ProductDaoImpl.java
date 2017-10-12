@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.niit.model.Product;
-import com.niit.model.User;
+
 
 
 @Repository("productDAO")
@@ -52,9 +52,9 @@ public class ProductDaoImpl implements ProductDao
 		
 	}
 
+	@SuppressWarnings("unchecked")
 	public List<Product> getProductDetails() {
-		// TODO Auto-generated method stub
-		return null;
+		return sessionFactory.getCurrentSession().createQuery("from Product").list();
 	}
 
 	public void delete(String id) {
