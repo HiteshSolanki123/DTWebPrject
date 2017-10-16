@@ -32,8 +32,8 @@ public class CartDaoTest {
 		cart.setProductId(2);
 		cart.setQuantity(50);
 		cart.setStatus("NP");
-		cart.setUsername("hitesh");
-		assertTrue("problem in adding CartItem",cartDao.addCart(cart));
+		cart.setEmail("hitesh");
+		assertTrue("problem in adding CartItem",cartDao.addToCart(cart));
 		
 	}
 	@Ignore
@@ -47,7 +47,7 @@ public class CartDaoTest {
 		cart.setProductId(30);
 		cart.setQuantity(50);
 		cart.setStatus("NP");
-		cart.setUsername("hitesh");
+		cart.setEmail("hitesh");
 		assertTrue("problem in adding CartItem",cartDao.updateCart(cart));
 		
 	}

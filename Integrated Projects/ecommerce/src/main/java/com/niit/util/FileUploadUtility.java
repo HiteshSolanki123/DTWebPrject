@@ -1,5 +1,5 @@
 package com.niit.util;
-
+/*
 import java.io.File;
 import java.io.IOException;
 
@@ -7,17 +7,18 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.web.multipart.MultipartFile;
 
-/*public class FileUploadUtility {
-	private static final String ABS_PATH = "E:\\TTT\\ecommerce\\src\\main\\webapp\\resources\\images\\";
+public class FileUploadUtility {
+	private static final String ABS_PATH = "E:\\TTT\\ecommerce\\src\\main\\webapp\\resources\\images\\product\\";
 	private static String REAL_PATH = "";
 
 	private static final Logger logger = LoggerFactory.getLogger(FileUploadUtility.class);
 
-	public static void uploadFile(HttpServletRequest request, Object file, Object code) {
+	public static void uploadFile(HttpServletRequest request, MultipartFile file, int i) {
 
 		// TODO Auto-generated method stub
-		REAL_PATH = request.getSession().getServletContext().getRealPath("/resources/images");
+		REAL_PATH = request.getSession().getServletContext().getRealPath("/resources/images/product");
 
 		logger.info(REAL_PATH);
 
@@ -32,12 +33,14 @@ import org.slf4j.LoggerFactory;
 		}
 		try {
 			// server upload
-			file.transferTo(new File(REAL_PATH + code + ".jpg"));
+			file.transferTo(new File(REAL_PATH + i + ".jpg"));
 			// project directory upload
-			file.transferTo(new File(ABS_PATH + code + ".jpg"));
+			file.transferTo(new File(ABS_PATH + i + ".jpg"));
 		} catch (IOException ex) {
 
 		}
 	}
+}
+*/
 
-}*/
+

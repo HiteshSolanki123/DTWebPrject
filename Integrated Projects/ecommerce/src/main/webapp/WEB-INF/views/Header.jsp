@@ -19,37 +19,50 @@
 <!-- Latest compiled JavaScript -->
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	
+
 </head>
 <body>
 
 	<nav class="navbar navbar-inverse">
 	<div class="container-fluid">
 		<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse"
+			<button type="button" class="navbar-toggle" data-toggle="collapse"
 				data-target="#myNavbar">
 				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="<c:url value="/Home/" />">Bikers Shop</a>
+			<a class="navbar-brand" href="<c:url value="/Home/" />">Bikers
+				Shop</a>
 		</div>
 		<div class="collapse navbar-collapse" id="myNavbar">
 			<ul class="nav navbar-nav">
 				<li><a href=" <c:url value="/Home/" />">Home</a></li>
-				<li><a href=" <c:url value="/getAllProducts" />">Product
-						List</a></li>
+				<li><a href=" <c:url value="/productList" />">Product List</a></li>
 				<li><a href=" <c:url value="/AboutUs/" />">About Us</a></li>
 
 				<security:authorize access="hasRole('ROLE_USER')">
 					<li><a href=" <c:url value="/ContactUs/" />">Contact Us</a></li>
-				</security:authorize>
+				</security:authorize><security:authorize access="hasRole('ROLE_USER')">
+			<button class="btn btn-primary dropdown-toggle" type="button"
+						data-toggle="dropdown">
+						Category <span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu">
+						<li><a href="#">HELMET</a></li>
+						<li><a href="#">GLOVES</a></li>
+						<li><a href="#">EXHAUST</a></li>
+						<li><a href="#">SAFETY GUARDS</a></li>
+						<li><a href="#">ACCESSORIES</a></li>
+						<li><a href="#">SHOES</a></li>
+					</ul>
+					</security:authorize>
 
 				<!-- 			Only admin can view this link -->
 				<security:authorize access="hasRole('ROLE_ADMIN')">
 					<li><a href=" <c:url value="/Admin/" />">Add Product</a></li>
 				</security:authorize>
 			</ul>
-
+			
 			<ul class="nav navbar-nav navbar-right">
 
 				<c:if test="${!empty pageContext.request.userPrincipal.name}">
@@ -57,10 +70,10 @@
 							class="glyphicon glyphicon-shopping-user"></span>Welcome..${pageContext.request.userPrincipal.name}</a></li>
 
 					<security:authorize access="hasRole('ROLE_USER')">
-						<li><a href="<c:url value="/Basket/" />"><span
+						<li><a href="<c:url value="/Cart/" />"><span
 								class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
 					</security:authorize>
-					<c:url value="/j_spring_security_logout" var="logoutUrl" />
+					<c:url value="/" var="logoutUrl" />
 					<form action="${logoutUrl}" method="post" id="logoutForm">
 						<input type="hidden" name="${_csrf.parameterName}"
 							value="${_csrf.token}" />
@@ -74,15 +87,17 @@
 							class="glyphicon glyphicon-log-out"></span> Logout</a></li>
 				</c:if>
 			</ul>
+			
+			</div>
 			<ul class="nav navbar-nav navbar-right">
 
 				<c:if test="${pageContext.request.userPrincipal.name==null}">
 					<li><a href="<c:url value="/login/" />"><span
-							class="glyphicon glyphicon-shopping-cart"></span>My Cart</a></li>
-							
+							class="glyphicon glyphicon-shopping-cart"></span>Cart</a></li>
+
 					<li><a href="<c:url value="/Registration/" />"><span
-							class="glyphicon glyphicon-log-user"></span> SignUp</a></li>
-							
+							class="glyphicon glyphicon-log-user"></span> Sign Up</a></li>
+
 					<li><a href="<c:url value="/login/" />"><span
 							class="glyphicon glyphicon-log-in"></span> Login</a></li>
 				</c:if>

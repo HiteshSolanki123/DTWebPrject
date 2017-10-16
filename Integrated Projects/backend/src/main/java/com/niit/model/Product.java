@@ -6,8 +6,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.Transient;
+
 import org.springframework.stereotype.Component;
+import org.springframework.web.multipart.MultipartFile;
 
 @Entity
 @Component
@@ -19,20 +21,32 @@ public class Product {
 	int quantity;
 	String pname;
 	String desc;
+	String manufacturer;
 
-	/*
-	 * @Transient private MultipartFile file;
-	 * 
-	 * 
-	 * public MultipartFile getFile(){ return file;
-	 * 
-	 * } public void setFile(MultipartFile file) { this.file = file; }
-	 */
+	
 
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	public String getManufacturer() {
+		return manufacturer;
+	}
+
+	public void setManufacturer(String manufacturer) {
+		this.manufacturer = manufacturer;
+	}
+
+	@Transient
+	private MultipartFile file;
+	public MultipartFile getFile() {
+		return file;
+	}
+
+	public void setFile(MultipartFile file) {
+		this.file = file;
+	}
+
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	String category_id;
 
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	String supplier_id;
 
 	public int getPid() {
@@ -89,6 +103,11 @@ public class Product {
 
 	public void setSupplier_id(String supplier_id) {
 		this.supplier_id = supplier_id;
+	}
+
+	public String getCode() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

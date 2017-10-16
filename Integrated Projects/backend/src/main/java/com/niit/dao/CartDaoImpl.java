@@ -14,16 +14,7 @@ import com.niit.model.Cart;
 public class CartDaoImpl implements CartDao {
 	@Autowired
 	SessionFactory sessionFactory;
-	@Transactional
-	public boolean addCart(Cart cart) {
-		try {
-			sessionFactory.getCurrentSession().save(cart);
-			return true;
-		} catch (Exception ex) {
-			return false;
-		}
-
-	}
+	
 	@Transactional
 	public boolean updateCart(Cart cart) {
 		try{
@@ -55,9 +46,17 @@ public class CartDaoImpl implements CartDao {
 		return false;
 	}
 
-	public List<Cart> getCartItems(String username) {
+	public List<Cart> getCartItems(String email) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+	public boolean addToCart(Cart cart) {
+		try {
+			sessionFactory.getCurrentSession().save(cart);
+			return true;
+		} catch (Exception ex) {
+			return false;
+		}
 	}
 
 }

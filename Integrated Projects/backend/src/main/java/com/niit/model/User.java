@@ -1,17 +1,9 @@
 package com.niit.model;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Size;
-
-import org.hibernate.validator.constraints.Email;
-import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.stereotype.Component;
 
 @Entity
@@ -21,12 +13,15 @@ public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int uid;
-	@Column(unique = true, name = "email")
-	/*@NotEmpty*/
-	/*@Email(message="enter valid email address")*/
+	
 	private String email;
-	/*@NotEmpty
-	@Size(min=10,max=10, message="enter the correct mobile no")*/
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
 	private String phone;
 
 	public String getPhone() {
@@ -52,17 +47,13 @@ public class User {
 	public void setLastname(String lastname) {
 		this.lastname = lastname;
 	}
-	/*@NotNull
-	@Pattern(regexp = "^[0-9]*")*/
+
 	private String firstname;
-	/*@NotEmpty
-	@Pattern(regexp = "^[0-9]*")*/
+
 	private String lastname;
-	@Column(name = "password")
-	/*@Max(8)*/
+
 	private String password;
 
-	@Column(name = "enabled")
 	private boolean enabled;
 
 	public boolean isEnabled() {
@@ -73,7 +64,6 @@ public class User {
 		this.enabled = enabled;
 	}
 
-	@Column(name = "role")
 	private String role;
 
 	public String getRole() {
@@ -92,13 +82,7 @@ public class User {
 		this.uid = uid;
 	}
 
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
+	
 
 	public String getPassword() {
 		return password;

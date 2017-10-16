@@ -36,12 +36,9 @@ public class UserController {
 	}
 
 	@PostMapping(value = "/insert")
-	public String insert(@Valid @ModelAttribute("user") User user, Model model, BindingResult results) {
+	public String insert(@ModelAttribute("user") User user, Model model, BindingResult results) {
 		{
-			if(results.hasErrors())
-			{
-				return "redirect:/Registration";
-			}
+			
 			user.setRole("ROLE_USER");
 			user.setEnabled(true);
 			userDAO.insertUser(user);
@@ -49,5 +46,6 @@ public class UserController {
 
 		}
 	}
+	
 	
 }

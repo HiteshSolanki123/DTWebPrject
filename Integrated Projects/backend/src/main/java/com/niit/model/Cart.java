@@ -13,7 +13,16 @@ public class Cart {
 	private int orderId;
 	private int productId;
 	private int quantity;
-	private String username;
+	private String email;
+	private int totalAmount;
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
 	private String price;
 	private String status;
 
@@ -49,14 +58,7 @@ public class Cart {
 		this.quantity = quantity;
 	}
 
-	public String getUsername() {
-		return username;
-	}
-
-	public void setUsername(String username) {
-		this.username = username;
-	}
-
+	
 	public String getPrice() {
 		return price;
 	}
@@ -71,6 +73,14 @@ public class Cart {
 
 	public void setStatus(String status) {
 		this.status = status;
+	}
+
+	public int getTotalAmount() {
+		return totalAmount;
+	}
+
+	public void setTotalAmount(int totalAmount) {
+		this.totalAmount = totalAmount;
 	}
 
 }

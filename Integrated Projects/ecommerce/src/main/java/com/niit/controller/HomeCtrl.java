@@ -17,10 +17,10 @@ public class HomeCtrl {
 		return "Home";
 	}
 
-	@RequestMapping("/Basket")
+	@RequestMapping("/Cart")
 	public String basket(Model model) {
 		model.addAttribute("message", "your products");
-		return "Basket";
+		return "Cart";
 	}
 
 	@RequestMapping("/AboutUs")
