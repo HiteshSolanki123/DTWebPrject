@@ -35,21 +35,13 @@ public class ProductController {
 		model.addAttribute("product", new Product());
 		return "Admin";
 	}
-	/*@Bean
-	public MultipartResolver multipartResolver() {
-		CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver();
-		multipartResolver.setMaxUploadSize(10240000);
-		return multipartResolver;*/
+	
 		
 	@PostMapping(value = "/insert")
 	public String insert(@ModelAttribute("product") Product product, Model model, BindingResult results, 
 			HttpServletRequest request) {
 		{
-			/*
-			if(!product.getFile().getOriginalFilename().equals(""))
-			{
-				FileUploadUtility.uploadFile(request, product.getFile(),product.getPid());
-			}*/
+			
 			productDAO.addProduct(product);
 			MultipartFile image = product.getFile();
 			if (image != null && !image.isEmpty()) {
@@ -74,7 +66,7 @@ public class ProductController {
 		}
 	}
 
-	@PostMapping(value = "/delete")
+	@PostMapping(value = "/deletePro")
 	public String delete(@ModelAttribute("product") Product product, Model model, BindingResult results,
 			HttpServletRequest request) {
 		{
@@ -85,39 +77,13 @@ public class ProductController {
 		}
 	}
 
-	@PostMapping(value = "/saveOrUpdate")
+	@PostMapping(value = "/updatePro")
 	public String saveOrUpdate(@ModelAttribute("product") Product product, Model model, BindingResult results,
 			HttpServletRequest request) {
 		productDAO.saveOrUpdate(product);
 		return "redirect:/Admin/";
 
-	}/*
-	@RequestMapping(value = "/admin/product/addProduct", method = RequestMethod.POST)
-	public String addProduct(@Valid @ModelAttribute(value = "productFormObj") Product product, BindingResult result) {
-		// Binding Result is used if the form that has any error then it will
-		// redirect to the same page without performing any functions
-		if (result.hasErrors())
-			return "addProduct";
-		productDAO.addProduct(product);
-		MultipartFile image = product.getFile();
-		if (image != null && !image.isEmpty()) {
-			Path path = (Path) Paths.get("E:/TTT/ecommerce/src/main/webapp/resources/images/product"
-							+ product.getPid() + ".jpg");
-
-			try {
-				image.transferTo(new File(path.toString()));
-			} catch (IllegalStateException e) {
-				e.printStackTrace();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-
-		}
-		return "redirect:/getAllProducts";
-
-	}*/
-	
+	}	
 	
 	
 	}

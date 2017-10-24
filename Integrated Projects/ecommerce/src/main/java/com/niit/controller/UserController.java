@@ -11,9 +11,6 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
 
 import com.niit.dao.UserDao;
 import com.niit.model.User;
@@ -36,9 +33,12 @@ public class UserController {
 	}
 
 	@PostMapping(value = "/insert")
-	public String insert(@ModelAttribute("user") User user, Model model, BindingResult results) {
+	public String insert(@Valid @ModelAttribute("user") User user, Model model, BindingResult results,Model model1) {
 		{
-			
+			if(results.hasErrors())
+			{
+				return "Registration";
+			}
 			user.setRole("ROLE_USER");
 			user.setEnabled(true);
 			userDAO.insertUser(user);

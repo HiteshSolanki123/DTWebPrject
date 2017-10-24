@@ -39,6 +39,7 @@
 		<div class="col-xs-2">
 			<input type="firstname" name="firstname" class="form-control"
 				id="firstname" placeholder="firstname" required>
+				<sf:errors path="firstname" />
 		</div>
 		<br></br>
 		<div class="form-group">

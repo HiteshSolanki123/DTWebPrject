@@ -17,11 +17,7 @@ public class HomeCtrl {
 		return "Home";
 	}
 
-	@RequestMapping("/Cart")
-	public String basket(Model model) {
-		model.addAttribute("message", "your products");
-		return "Cart";
-	}
+	
 
 	@RequestMapping("/AboutUs")
 	public String aboutus(Model model) {
@@ -31,7 +27,7 @@ public class HomeCtrl {
 	}
 	@RequestMapping("/addProduct")
 	public String addProduct(Model model) {
-		model.addAttribute("message", "Website Info");
+		model.addAttribute("message", "Admin authorities");
 		return "addProduct";
 
 	}
@@ -48,11 +44,7 @@ public class HomeCtrl {
 		return "Category";
 	}
 
-	@RequestMapping("/Helmets")
-	public String helmets(Model model) {
-		model.addAttribute("message", "login here");
-		return "Helmets";
-	}
+	
 	@RequestMapping("/access-denied")
 	public String accessDenied(Model model) {
 		ModelAndView model1=new ModelAndView("error");

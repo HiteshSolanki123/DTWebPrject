@@ -85,9 +85,9 @@
 							<form:input type="file" path="file" class="form-control" />
 							<br></br>
 							<td><button type="submit" class="btn btn-lg btn-info">Save</button></td>
-							<td><a href="/saveOrUpdate"></a>
+							<td><a href="/updatePro"></a>
 							<button class="btn btn-lg btn-info">Update</button></td>
-							<td><a href="/delete"></a>
+							<td><a href="/deletePro"></a>
 							<button class="btn btn-lg btn-info">Delete</button></td>
 							<td><button type="reset" class="btn btn-lg btn-info">Reset</button></td>
 

@@ -1,6 +1,8 @@
 package com.niit.model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 import org.springframework.stereotype.Component;
@@ -9,12 +11,49 @@ import org.springframework.stereotype.Component;
 @Component
 public class Cart {
 	@Id
+	/*@GeneratedValue(strategy = GenerationType.AUTO)*/
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private int cartItemId;
-	private int orderId;
+	private String desc;
+	private String manufacturer;
+	public String getManufacturer() {
+		return manufacturer;
+	}
+
+	public void setManufacturer(String manufacturer) {
+		this.manufacturer = manufacturer;
+	}
+
 	private int productId;
 	private int quantity;
+	private String pname;
+	public String getPname() {
+		return pname;
+	}
+
+	public void setPname(String pname) {
+		this.pname = pname;
+	}
+
 	private String email;
 	private int totalAmount;
+	private int orderId;
+	public int getOrderId() {
+		return orderId;
+	}
+
+	public String getDesc() {
+		return desc;
+	}
+
+	public void setDesc(String desc) {
+		this.desc = desc;
+	}
+
+	public void setOrderId(int orderId) {
+		this.orderId = orderId;
+	}
+
 	public String getEmail() {
 		return email;
 	}
@@ -34,13 +73,7 @@ public class Cart {
 		this.cartItemId = cartItemId;
 	}
 
-	public int getOrderId() {
-		return orderId;
-	}
-
-	public void setOrderId(int orderId) {
-		this.orderId = orderId;
-	}
+	
 
 	public int getProductId() {
 		return productId;

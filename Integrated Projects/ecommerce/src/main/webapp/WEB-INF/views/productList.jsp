@@ -1,7 +1,10 @@
 <jsp:include page="Header.jsp"></jsp:include>
+<%@ taglib prefix="security"
+	uri="http://www.springframework.org/security/tags"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <link rel="stylesheet"
 	href="<c:url value="resources/css/bootstrap-theme.min.css"/>">
+	<c:set var="cp" value="${pageContext.request.contextPath}" />
 <table border="1">
 	<tr>
 	<th>Image</th>
@@ -22,6 +25,11 @@
 			<td>${prod.price}</td>
 			<td>${prod.desc}</td>
 			<td>${prod.manufacturer}</td>
-			<td><button value="Add to cart">Add To Cart</button></td>
+			<td>
+               <%-- <a class="btn btn-success btn-product" href="${cp}/addCart/${prod.pid}"><span class="glyphicon glyphicon-shopping-cart"></span> Add to cart</a> --%> 
+               <a class="btn btn-success btn-product" href="cart/addtocart/${prod.pid}"><span class="glyphicon glyphicon-shopping-cart"></span> Add to cart</a>
+           </td>
+							
 	</c:forEach>
+	</form>
 </table>

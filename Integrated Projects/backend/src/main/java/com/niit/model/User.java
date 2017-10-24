@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
+import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.stereotype.Component;
 
 @Entity
@@ -47,9 +49,9 @@ public class User {
 	public void setLastname(String lastname) {
 		this.lastname = lastname;
 	}
-
+	@NotBlank(message="please enter the name")
 	private String firstname;
-
+	@NotBlank(message="please enter the name")
 	private String lastname;
 
 	private String password;
