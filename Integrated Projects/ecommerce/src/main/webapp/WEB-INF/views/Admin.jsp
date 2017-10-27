@@ -6,35 +6,19 @@
 <html>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Administration</title>
-<c:url value="/" var="logoutUrl" />
-<form action="${logoutUrl}" method="post" id="logoutForm">
-	<input type="hidden" name="${_csrf.parameterName}"
-		value="${_csrf.token}" />
-</form>
-<script>
-	function formSubmit() {
-		document.getElementById("logoutForm").submit();
-	}
-</script>
-
-
-</h2>
-<
 </html>
 <center>
 	<h2>
 		<b>Administration</b>
 	</h2>
 </center>
-<form:form modelAttribute="product" method="post"
-	action="${cp}/Admin/insert" enctype="multipart/form-data">
 
+<form:form method="post" action="${cp}/Admin/insert" modelAttribute="product" enctype="multipart/form-data">
 	<table align="center">
 		<thead bgcolor="blue">
 
 		</thead>
 		<tr>
-		
 			<td><form:hidden path="pid"></form:hidden></td>
 		</tr>
 		<tr>
@@ -45,51 +29,44 @@
 		</tr>
 
 		<div class="form-group">
-			<label for="price" class="control-label col-xs-2">Price</label>
+			<form:label path="price" class="control-label col-xs-2">Price</form:label>
 			<div class="col-xs-2">
-				<input type="price" name="price" class="form-control" id="price"
-					placeholder="price" required>
+				<form:input path="price" name="price" placeholder="price" required="required"/>
 			</div>
 			<br></br>
 			<div class="form-group">
-				<label for="quantity" class="control-label col-xs-2">Quantity</label>
+				<form:label path="quantity" class="control-label col-xs-2">Quantity</form:label>
 				<div class="col-xs-2">
-					<input type="quantity" name="quantity" class="form-control"
-						id="quantity" placeholder="quantity" required>
+					<form:input path="quantity" placeholder="quantity" required="required" />
 				</div>
 				<br></br>
 				<div class="form-group">
-					<label for="pname" class="control-label col-xs-2">Product
-						Name</label>
+					<form:label path="pname" class="control-label col-xs-2">Product	Name</form:label>
 					<div class="col-xs-2">
-						<input type="pname" name="pname" class="form-control" id="pname"
-							placeholder="product name" required>
+						<form:input path="pname" placeholder="product name" required="required"/>
 					</div>
 					<br></br>
 					<div class="form-group">
-						<label for="desc" class="control-label col-xs-2">Description</label>
+						<form:label path="desc" class="control-label col-xs-2">Description</form:label>
 						<div class="col-xs-2">
-							<input type="desc" name="desc" class="form-control" id="desc"
-								placeholder="Description" required>
+							<form:input path="desc" placeholder="Description" required="required"/>
 						</div>
 						<br></br>
 						<div class="form-group">
-						<label for="manufacturer" class="control-label col-xs-2">Manufacturer</label>
-						<div class="col-xs-2">
-							<input type="manufacturer" name="manufacturer" class="form-control" id="manufacturer"
-								placeholder="manufacturer" required>
-						</div>
-						<br></br>
-						<div class="form-group">
-							<form:label path="file">Select Image</form:label>
-							<form:input type="file" path="file" class="form-control" />
+							<form:label path="manufacturer" class="control-label col-xs-2">Manufacturer</form:label>
+							<div class="col-xs-2">
+								<form:input path="manufacturer"  placeholder="manufacturer" required="required"/>
+							</div>
 							<br></br>
-							<td><button type="submit" class="btn btn-lg btn-info">Save</button></td>
-							<td><a href="/updatePro"></a>
-							<button class="btn btn-lg btn-info">Update</button></td>
-							<td><a href="/deletePro"></a>
-							<button class="btn btn-lg btn-info">Delete</button></td>
-							<td><button type="reset" class="btn btn-lg btn-info">Reset</button></td>
+							<div class="form-group">
+								<form:label path="file">Select Image</form:label>
+								<form:input type="file" path="file" class="form-control" required="required"/>
+								<br></br>
+
+								<form:button type="submit" class="btn btn-lg btn-info">SAVE</form:button>
+								<form:button type="reset" class="btn btn-lg btn-info">RESET</form:button>
+
+							</div>
 
 						</div>
 					</div>
@@ -98,5 +75,3 @@
 		</div>
 	</table>
 </form:form>
-
-

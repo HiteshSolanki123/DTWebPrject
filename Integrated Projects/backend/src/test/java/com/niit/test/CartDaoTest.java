@@ -9,7 +9,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 import com.niit.dao.CartDao;
 import com.niit.model.Cart;
-/*
+
 public class CartDaoTest {
 	
 	static CartDao cartDao;
@@ -64,4 +64,3 @@ public class CartDaoTest {
 	
 }
 
-*/

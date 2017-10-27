@@ -21,9 +21,11 @@
 	action="${cp}/Registration/insert">
 
 	<h2>
-	<center><b>REGISTRATION</b></center>
+		<center>
+			<b>REGISTRATION</b>
+		</center>
 	</h2>
-<br></br>
+
 	<tr>
 		<td><form:hidden path="uid"></form:hidden></td>
 	</tr>
@@ -34,58 +36,37 @@
 		<td><form:hidden path="role"></form:hidden></td>
 	</tr>
 	<div class="form-group">
-		<label for="firstname" class="control-label col-xs-2">First
-			Name</label>
-		<div class="col-xs-2">
-			<input type="firstname" name="firstname" class="form-control"
-				id="firstname" placeholder="firstname" required>
-				<sf:errors path="firstname" />
-		</div>
-		<br></br>
-		<div class="form-group">
-			<label for="lastname" class="control-label col-xs-2">Last
-				Name</label>
-			<div class="col-xs-2">
-				<input type="lastname" name="lastname" class="form-control"
-					id="lastname" placeholder="lastname" required>
+	<form:label path="firstname">First Name</form:label> <form:input
+			path="firstname" name="firstname" id="firstname"
+			placeholder="firstname" maxlength="12" required="required" />
 			</div>
-			<br></br>
-			<div class="form-group">
-				<label for="phone" class="control-label col-xs-2">Contact No</label>
-				<div class="col-xs-2">
-					<input type="phone" name="phone" class="form-control" id="phone"
-						placeholder="phone" required>
-				</div>
-				<br></br>
-				<div class="form-group">
-					<label for="email" class="control-label col-xs-2">Email Id</label>
-					<div class="col-xs-2">
-						<input type="email" name="email" class="form-control" id="email"
-							placeholder="email" required>
-					</div>
-					<br></br>
-					<div class="form-group">
-						<label for="password" class="control-label col-xs-2">Password
-						</label>
-						<div class="col-xs-2">
-							<input type="password" name="password" class="form-control"
-								placeholder="password" required>
-						</div>
-						<br></br>
+<br></br>
 
-						<div class="form-group">
-							<div class="col-xs-offset-2 col-xs-10">
-								<button type="submit" class="btn btn-primary">Submit</button>
-								<button type="reset" class="btn btn-lg btn-info">Cancel</button>
-							</div>
-						</div>
-					</div>
-				</div>
+	<div class="form-group">
+	<form:label path="lastname">Last Name</form:label> <form:input
+			path="lastname" name="lastname" id="lastname" placeholder="lastname" maxlength="12" 
+			required="required" /></div>
+<br></br>
+<div class="form-group">
+	<form:label path="phone">Contact No</form:label> <form:input
+			path="phone" name="phone" id="phone" placeholder="phone" maxlength="10" 
+			required="required" /></div>
+<br></br>
+
+	<div class="form-group">
+	<form:label path="email">Email Id</form:label> <form:input
+			path="email" name="email" id="email" placeholder="email"
+			required="required" />
 			</div>
-		</div>
+<br></br>
+	<div class="form-group">
+	<form:label path="password">Password</form:label> <form:input
+			path="password" name="password" placeholder="password" id="password"
+			required="required" /></div>
+	<div class="form-group">
+	<form:button type="submit" class="btn btn-primary">Submit</form:button>
+	<form:button type="reset" class="btn btn-lg btn-info">Cancel</form:button>
 	</div>
-	
-	
-	
 
 </form:form>
+</html>

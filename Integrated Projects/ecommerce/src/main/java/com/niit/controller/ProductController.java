@@ -14,9 +14,12 @@ import org.springframework.stereotype.Repository;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.niit.dao.ProductDao;
 import com.niit.model.Product;
@@ -41,8 +44,12 @@ public class ProductController {
 	public String insert(@ModelAttribute("product") Product product, Model model, BindingResult results, 
 			HttpServletRequest request) {
 		{
-			
+			if(product.getPid()==0){
 			productDAO.addProduct(product);
+			}else
+			{
+				productDAO.saveOrUpdate(product);
+			}
 			MultipartFile image = product.getFile();
 			if (image != null && !image.isEmpty()) {
 				Path path = Paths
@@ -54,7 +61,7 @@ public class ProductController {
 				} catch (IllegalStateException e) {
 					e.printStackTrace();
 				} catch (IOException e) {
-					// TODO Auto-generated catch block
+					
 					e.printStackTrace();
 				}
 
@@ -65,25 +72,9 @@ public class ProductController {
 
 		}
 	}
+	
 
-	@PostMapping(value = "/deletePro")
-	public String delete(@ModelAttribute("product") Product product, Model model, BindingResult results,
-			HttpServletRequest request) {
-		{
-			
-			productDAO.delete(product);
-			return "redirect:/Admin/";
-
-		}
-	}
-
-	@PostMapping(value = "/updatePro")
-	public String saveOrUpdate(@ModelAttribute("product") Product product, Model model, BindingResult results,
-			HttpServletRequest request) {
-		productDAO.saveOrUpdate(product);
-		return "redirect:/Admin/";
-
-	}	
+	
 	
 	
 	}

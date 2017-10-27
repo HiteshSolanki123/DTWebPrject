@@ -22,13 +22,14 @@
 		<td>${cart.price*cart.quantity }</td>
 		<td><img src="<c:url value='/resources/images/product/${cart.productId}.jpg'/>" width="100px"></td>
 		<td>
-		<a class="btn btn-success btn-product" href="cart/deleteCartItem/${cart.cartItemId}"><span class="glyphicon glyphicon-shopping-cart"></span> Delete</a>
+		
+		<a class="btn btn-success btn-product" href="${cp}/delete/${cart.cartItemId}"><span class="glyphicon glyphicon-shopping-cart"></span> Delete</a>
           </td>
 	</tr>
 	</c:forEach>
 	<tr>
 		<td><a href="/checkout" input type="submit" value="Checkout"/></a></td>
-		<td><a class="btn btn-success btn-product" href="cart/checkout"><span class="glyphicon glyphicon-shopping-cart"></span> Checkout</a>
+		<td><a class="btn btn-success btn-product" href="${cp}/checkout"><span class="glyphicon glyphicon-shopping-cart"></span> Checkout</a>
         </td>
 	</tr>
 </table>

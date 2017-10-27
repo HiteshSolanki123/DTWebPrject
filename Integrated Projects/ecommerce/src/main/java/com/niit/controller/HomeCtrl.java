@@ -1,5 +1,11 @@
 package com.niit.controller;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Repository;
 import org.springframework.ui.Model;
@@ -16,7 +22,11 @@ public class HomeCtrl {
 		model.addAttribute("message", "Thank you for visiting Shopping Cart");
 		return "Home";
 	}
-
+	@RequestMapping("/checkout")
+	public String checkout(Model model) {
+		model.addAttribute("message","checkout");
+		return "checkout";
+	}
 	
 
 	@RequestMapping("/AboutUs")
@@ -27,7 +37,7 @@ public class HomeCtrl {
 	}
 	@RequestMapping("/addProduct")
 	public String addProduct(Model model) {
-		model.addAttribute("message", "Admin authorities");
+		model.addAttribute("message", "adding the product");
 		return "addProduct";
 
 	}
@@ -37,38 +47,34 @@ public class HomeCtrl {
 		model.addAttribute("message", "Website Info");
 		return "ContactUs";
 	}
-
-	@RequestMapping("/Category")
-	public String category(Model model) {
-		model.addAttribute("message", "Website Info");
-		return "Category";
-	}
-
-	
-	@RequestMapping("/access-denied")
-	public String accessDenied(Model model) {
-		ModelAndView model1=new ModelAndView("error");
-		model1.addObject("title","403, Access denied");
-		model1.addObject("errorTitle","you are not authorize to this page");
-		
-		return "model1";
-	}
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public ModelAndView login(@RequestParam(name = "error", required = false) String error,
 			@RequestParam(value = "logout", required = false) String logout) {
 
 		ModelAndView model = new ModelAndView();
 		if (error != null) {
+			//it shows an error message if user enter invalid credentials
 			model.addObject("message", "Invalid username and password!");
 		}
 
 		if (logout != null) {
+			//shows message if user is being logout
 			model.addObject("message", "You've been logged out successfully.");
 		}
 		model.setViewName("login");
 
 		return model;
 
+	}
+	@RequestMapping(value="/perform-logout")
+	public String logout(HttpServletRequest request , HttpServletResponse response){
+		//fetching the authentication
+		Authentication auth =SecurityContextHolder.getContext().getAuthentication();
+		if(auth!=null){
+		new SecurityContextLogoutHandler().logout(request,response,auth);	
+		}
+		return "redirect:/login?logout";
+		
 	}
 	
 

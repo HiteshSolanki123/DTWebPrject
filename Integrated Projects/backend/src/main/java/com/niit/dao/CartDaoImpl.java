@@ -18,7 +18,6 @@ import com.niit.model.Product;
 public class CartDaoImpl implements CartDao {
 	@Autowired
 	SessionFactory sessionFactory;
-	
 	@Transactional
 	public boolean updateCart(Cart cart) {
 		try{
@@ -46,10 +45,10 @@ public class CartDaoImpl implements CartDao {
 	}
 	@Transactional
 	public Cart getCartItem(int cartItemId) {
-		@SuppressWarnings("unchecked")
-		Query query = sessionFactory.getCurrentSession().createQuery("from Cart where cartItemId=:cartItemId");
-		query.setParameter("cartItemId",cartItemId);
-		return (Cart) query;
+		Session session = sessionFactory.openSession();
+		Cart cart = (Cart) session.get(Cart.class, new Integer(cartItemId));
+		 /*sessionFactory.getCurrentSession().get(Product.class,id);*/
+		return cart;
 	}
 	@Transactional
 	public List<Cart> getCartItems(String email) {

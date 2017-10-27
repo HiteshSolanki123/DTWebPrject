@@ -9,7 +9,9 @@ public interface ProductDao {
 
 	public void saveOrUpdate(Product product);
 
-	public void delete(Product pid);
+	public void deleteProduct(Product product);
+
+	public void deleteProId(Product product);
 
 	public Product getById(String id);
 
@@ -18,5 +20,7 @@ public interface ProductDao {
 	public void addProduct(Product product);
 
 	public List<Product> getProductDetails();
+
+	public Product getById(int pid);
 
 }
