@@ -21,25 +21,26 @@ public class UserDaoImpl implements UserDao
 	public UserDaoImpl(SessionFactory sessionFactory) {
 	    this.sessionFactory = sessionFactory;
 	}
+	//registering the new user 
 	public void insertUser(User user) {
 		sessionFactory.getCurrentSession().persist(user);
 		
 	}
-
+	//getting the user details using the email field
 	public User getUserDetails(String email) {
 		{
 			User user =(User) sessionFactory.getCurrentSession().get(User.class, new String(email));	
 			return user;
 		}
 	}
-
+	//getting the user details by its user id
 	public User getUById(String userId) {
 		{
 			User user =(User) sessionFactory.getCurrentSession().get(User.class, new String(userId));	
 			return user;
 		}
 	}
-
+	//fetching all the user from user table 
 	public List<User> getAllCustomers() {
 		sessionFactory.getCurrentSession().createQuery("from User").list();
 

@@ -33,8 +33,14 @@ public class HomeCtrl {
 	public String aboutus(Model model) {
 		model.addAttribute("message", "Website Info");
 		return "AboutUs";
-
 	}
+		@RequestMapping("/thankyou")
+		public String thankyou(Model model) {
+			model.addAttribute("message", "Website Info");
+			return "thankyou";
+			
+	}
+		
 	@RequestMapping("/addProduct")
 	public String addProduct(Model model) {
 		model.addAttribute("message", "adding the product");

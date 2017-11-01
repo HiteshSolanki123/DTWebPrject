@@ -15,9 +15,10 @@ import org.springframework.orm.hibernate4.HibernateTransactionManager;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import com.niit.dao.BillDaoImpl;
+import com.niit.dao.PaymentDaoImpl;
 import com.niit.dao.ProductDaoImpl;
 import com.niit.dao.UserDaoImpl;
-import com.niit.model.*;
 
 
 @Configuration
@@ -62,7 +63,19 @@ public class ApplicationContextConfig {
 	    public ProductDaoImpl getProductDao(SessionFactory sessionFactory)
 	    {
 	    	return new ProductDaoImpl();
-	    }
+	    }    
+	    @Autowired
+	    @Bean(name="BillDaoImpl")
+	    public BillDaoImpl getBillDao(SessionFactory sessionFactory)
+	    {
+	    	return new BillDaoImpl();
+	    }    
+	    @Autowired
+	    @Bean(name="PaymentDaoImpl")
+	    public PaymentDaoImpl getPaymentDao(SessionFactory sessionFactory)
+	    {
+	    	return new PaymentDaoImpl();
+	    }    
 		@Autowired
 		@Bean(name = "transactionManager")
 		public HibernateTransactionManager getTransactionManager(SessionFactory sessionFactory) 

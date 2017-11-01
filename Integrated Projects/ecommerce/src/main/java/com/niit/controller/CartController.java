@@ -25,27 +25,29 @@ public class CartController {
 	ProductDao productDAO;
 	@Autowired
 	Product pro;
-	/*
-	 * @Autowired Cart cart;
-	 */
+	
 	HttpSession session;
-   
+   //for  providing the URI pattern for which handler method will be used
 	@RequestMapping(value = { "/cart" })
 	public ModelAndView cartList() {
-
+		//for fetching the current user login
 		String email = SecurityContextHolder.getContext().getAuthentication().getName();
+		//fetching the email from the cart table
 		List<Cart> cart = cartDAO.getCartItems(email);
-
+		
 		return new ModelAndView("Cart", "cart", cart);
 
 	}
-
+	
 	@RequestMapping("/cart/{pid}")
-	public String addToCart(@PathVariable String pid) {
+	public String addToCart(@PathVariable int pid) {
+		//create a Cart object
 		Cart cart = new Cart();
+		//fetching the productid
 		Product product = productDAO.getById(pid);
-		cart.setProductId(Integer.parseInt(pid));
+		//fetching the current user login
 		String email = SecurityContextHolder.getContext().getAuthentication().getName();
+		//setting all the cart fields
 		cart.setDesc(product.getDesc());
 		cart.setManufacturer(product.getManufacturer());
 		cart.setPname(product.getPname());
@@ -54,10 +56,10 @@ public class CartController {
 		cart.setStatus("NP");
 		cart.setEmail(email);
 		cart.setPrice(String.valueOf(product.getPrice()));
-		cart.setQuantity(2);
+		cart.setQuantity(1);
+		//using the cartDAO object the data is stored in the database bt addToCart method in dao class
 		cartDAO.addToCart(cart);
-
-		return "redirect:/productList";
+		return "redirect:/cart";
 	}
 
 	@RequestMapping("/delete/{temp}")

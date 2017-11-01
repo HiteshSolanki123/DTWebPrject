@@ -18,9 +18,11 @@
 	<c:forEach items="${cart}" var="cart">
 	<tr>
 		<td>${cart.pname}</td>
-		<td><input type="text" value="${ cart.quantity}" name="quantity" required/></td>
+		<td><input type="text" value="${cart.quantity}" name="quantity" required/></td>
 		<td>${cart.price*cart.quantity }</td>
-		<td><img src="<c:url value='/resources/images/product/${cart.productId}.jpg'/>" width="100px"></td>
+		<td class=center style="width: 171px"><img
+				src="${pageContext.request.contextPath}/resources/images/product/${prod.pid}.jpg"
+				style="width: 100px; height: 100px;"></td>
 		<td>
 		
 		<a class="btn btn-success btn-product" href="${cp}/delete/${cart.cartItemId}"><span class="glyphicon glyphicon-shopping-cart"></span> Delete</a>
@@ -29,7 +31,7 @@
 	</c:forEach>
 	<tr>
 		<td><a href="/checkout" input type="submit" value="Checkout"/></a></td>
-		<td><a class="btn btn-success btn-product" href="${cp}/checkout"><span class="glyphicon glyphicon-shopping-cart"></span> Checkout</a>
+		<td><a class="btn btn-success btn-product" href="${cp}/Bill/"><span class="glyphicon glyphicon-shopping-cart"></span> Checkout</a>
         </td>
 	</tr>
 </table>

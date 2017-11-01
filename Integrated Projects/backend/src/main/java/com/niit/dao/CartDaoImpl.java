@@ -18,54 +18,55 @@ import com.niit.model.Product;
 public class CartDaoImpl implements CartDao {
 	@Autowired
 	SessionFactory sessionFactory;
+	//for saving and updating the cart 
 	@Transactional
 	public boolean updateCart(Cart cart) {
-		try{
+		try {
 			sessionFactory.getCurrentSession().saveOrUpdate(cart);
 			return true;
-			}
-			catch(Exception e){
-				System.out.println("Exception arised"+e);
-				
-			}
-			return false;
-		
+		} catch (Exception e) {
+			System.out.println("Exception arised" + e);
+
+		}
+		return false;
+
 	}
+	// for deleting the cart
 	@Transactional
 	public boolean deleteCart(Cart cart) {
-		try{
-		sessionFactory.getCurrentSession().delete(cart);
-		return true;
-		}
-		catch(Exception e){
-			System.out.println("Exception arised"+e);
-			
+		try {
+			sessionFactory.getCurrentSession().delete(cart);
+			return true;
+		} catch (Exception e) {
+			System.out.println("Exception arised" + e);
+
 		}
 		return false;
 	}
+	// getting the cart details by id
 	@Transactional
 	public Cart getCartItem(int cartItemId) {
 		Session session = sessionFactory.openSession();
 		Cart cart = (Cart) session.get(Cart.class, new Integer(cartItemId));
-		 /*sessionFactory.getCurrentSession().get(Product.class,id);*/
+		/* sessionFactory.getCurrentSession().get(Product.class,id); */
 		return cart;
 	}
+	// getting the email details from the cart table
 	@Transactional
 	public List<Cart> getCartItems(String email) {
 		Query query = sessionFactory.getCurrentSession().createQuery("from Cart where email=:email");
-		query.setParameter("email",email);
+		query.setParameter("email", email);
 		@SuppressWarnings("unchecked")
-		List<Cart> list=query.list();
+		List<Cart> list = query.list();
 		return list;
 	}
-	
+	// for inserting the data in the cart table 
 	@Transactional
 	public boolean addToCart(Cart cart) {
 		try {
-			/*Session session = sessionFactory.openSession();*/
+
 			sessionFactory.getCurrentSession().save(cart);
-			/*session.save(cart);
-			session.beginTransaction().commit();*/
+
 			return true;
 		} catch (Exception ex) {
 			return false;

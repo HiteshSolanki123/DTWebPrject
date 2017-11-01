@@ -17,63 +17,46 @@ import com.niit.model.Product;
 public class ProductDaoImpl implements ProductDao {
 	@Autowired
 	private SessionFactory sessionFactory;
-
+	//getting all the product details from product table
 	public List<Product> getAll() {
 		sessionFactory.getCurrentSession().createQuery("FROM Product").list();
 
 		return null;
 	}
-
+	//for saving and updating the product 
 	public void saveOrUpdate(Product product) {
 
 		sessionFactory.getCurrentSession().saveOrUpdate(product);
 
 	}
-
+	//for fetching the product id 
 	public Product deleteProId(int pid) {
 		Session session = sessionFactory.openSession();
 		Product product = (Product) session.get(Product.class, new Integer(pid));
 		return product;
 	}
-
-	public Product getById(String id) {
-		Session session = sessionFactory.openSession();
-		Product product = (Product) session.get(Product.class, Integer.parseInt(id));
-		return product;
-	}
-
+	//for saving or inserting the data in product table
 	public void save(Product product) {
 		sessionFactory.getCurrentSession().save(product);
 
 	}
-
+	//for saving or inserting the data in product table
 	public void addProduct(Product product) {
 		sessionFactory.getCurrentSession().persist(product);
 
 	}
-
+	//for fetching all the product details from the product table
 	@SuppressWarnings("unchecked")
 	public List<Product> getProductDetails() {
 		return sessionFactory.getCurrentSession().createQuery("from Product").list();
 	}
-
-	public void delete(String id) {
-		// TODO Auto-generated method stub
-
-	}
-
-	public void deleteProId(Product pid) {
-		// TODO Auto-generated method stub
-
-	}
-
 	public Product getById(int id) {
 		Session session = sessionFactory.openSession();
-		Product product = (Product) session.get(Product.class, (id));
+		Product product = (Product) session.get(Product.class,new Integer(id));
 		return product;
 
 	}
-
+	//for deleting the product from database
 	@Transactional
 	public void deleteProduct(Product product) {
 

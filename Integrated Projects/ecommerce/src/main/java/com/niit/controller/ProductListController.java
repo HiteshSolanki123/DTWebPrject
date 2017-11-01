@@ -20,6 +20,7 @@ public class ProductListController {
 
 	@RequestMapping(value = { "/productList" })
 	public ModelAndView getAllProducts() {
+		//viewing all the product in webpage
 		List<Product> product = productDAO.getProductDetails();
 
 		return new ModelAndView("productList", "product", product);
@@ -30,36 +31,22 @@ public class ProductListController {
 	public String deleteProId(@PathVariable String temp) {
 		int pid = Integer.parseInt(temp);
 		@SuppressWarnings("unused")
+		//converting the string into int
 		int getById = Integer.parseInt(temp);
+		//fetching the pid from the product table
 		Product produ = productDAO.getById(pid);
+		//deleting the fetched product
 		productDAO.deleteProduct(produ);
 		return "redirect:/productList";
 }
-	/*
-	@RequestMapping(value="/updatePro/{pid}")  
-    public ModelAndView saveOrUpdate(@PathVariable int pid, @ModelAttribute("product") Product product, ModelAndView model){  
-		System.out.println("before update");
-		model.addObject("product", productDAO.getById(pid));
-		productDAO.saveOrUpdate(product);
-        return new ModelAndView("redirect:/Admin/");  
-    }  */
-	/*
-	@RequestMapping(value="/updatePro/{pid}", method= RequestMethod.GET)
-	public String editProduct(@PathVariable("pid") int pid, Model model) {
-		System.out.println("before update");
-		Product pro = productDAO.getById(pid);
-	model.addAttribute("product",pro );
-	model.addAttribute("products", productDAO.getAll());
-	System.out.println("after update" + pro.getPname());
-	return "redirect:/Admin/";
-	}*/
+	
 	@RequestMapping(value="/updatePro/{pid}", method= RequestMethod.GET)
 	public ModelAndView editProduct(@PathVariable int pid)
 	{
 		ModelAndView mv=new ModelAndView("Admin");
-		mv.addObject("userClickManageProducts", true);
+		mv.addObject("userClickAddProducts", true);
 		mv.addObject("title","Manage Products");
-		//fetch the product from database
+		//fetch the product by product id(pid) from database
 		Product prod2=productDAO.getById(pid);
 		//set the product from database
 		mv.addObject("product",prod2);

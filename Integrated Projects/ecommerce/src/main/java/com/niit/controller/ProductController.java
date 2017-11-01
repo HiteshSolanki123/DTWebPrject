@@ -52,6 +52,7 @@ public class ProductController {
 			}
 			MultipartFile image = product.getFile();
 			if (image != null && !image.isEmpty()) {
+				//setting the path for saving the image in the directory
 				Path path = Paths
 						.get("E:/TTT/ecommerce/src/main/webapp/resources/images/product/"
 								+ product.getPid() + ".jpg");
