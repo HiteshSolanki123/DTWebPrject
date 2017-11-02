@@ -1,7 +1,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page session="true"%>
 <c:set var="cp" value="${pageContext.request.contextPath}" />
-
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <jsp:include page="Header.jsp"></jsp:include>
 <h1>Sign-Up</h1>
 <script>
@@ -69,4 +73,6 @@
 <br></br>
 <br></br>
 <br></br>
+<br></br>
+
 <jsp:include page="Footer.jsp"></jsp:include>

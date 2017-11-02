@@ -17,7 +17,9 @@
 		<intercept-url pattern="/Admin/**" access="hasRole('ROLE_ADMIN')" />
 		<!-- register user access -->
 		<intercept-url pattern="/Cart**" access="hasRole('ROLE_USER')" />
+		
 		<intercept-url pattern="/cart**" access="hasRole('ROLE_USER')" />
+		
 		<!--  permiting all -->
 		<intercept-url pattern="/**" access="permitAll" />
 		

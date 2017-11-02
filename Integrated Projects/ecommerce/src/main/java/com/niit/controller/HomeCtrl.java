@@ -22,25 +22,26 @@ public class HomeCtrl {
 		model.addAttribute("message", "Thank you for visiting Shopping Cart");
 		return "Home";
 	}
+
 	@RequestMapping("/checkout")
 	public String checkout(Model model) {
-		model.addAttribute("message","checkout");
+		model.addAttribute("message", "checkout");
 		return "checkout";
 	}
-	
 
 	@RequestMapping("/AboutUs")
 	public String aboutus(Model model) {
 		model.addAttribute("message", "Website Info");
 		return "AboutUs";
 	}
-		@RequestMapping("/thankyou")
-		public String thankyou(Model model) {
-			model.addAttribute("message", "Website Info");
-			return "thankyou";
-			
+
+	@RequestMapping("/thankyou")
+	public String thankyou(Model model) {
+		model.addAttribute("message", "Website Info");
+		return "thankyou";
+
 	}
-		
+
 	@RequestMapping("/addProduct")
 	public String addProduct(Model model) {
 		model.addAttribute("message", "adding the product");
@@ -53,18 +54,19 @@ public class HomeCtrl {
 		model.addAttribute("message", "Website Info");
 		return "ContactUs";
 	}
+
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public ModelAndView login(@RequestParam(name = "error", required = false) String error,
 			@RequestParam(value = "logout", required = false) String logout) {
 
 		ModelAndView model = new ModelAndView();
 		if (error != null) {
-			//it shows an error message if user enter invalid credentials
+			// it shows an error message if user enter invalid credentials
 			model.addObject("message", "Invalid username and password!");
 		}
 
 		if (logout != null) {
-			//shows message if user is being logout
+			// shows message if user is being logout
 			model.addObject("message", "You've been logged out successfully.");
 		}
 		model.setViewName("login");
@@ -72,19 +74,16 @@ public class HomeCtrl {
 		return model;
 
 	}
-	@RequestMapping(value="/perform-logout")
-	public String logout(HttpServletRequest request , HttpServletResponse response){
-		//fetching the authentication
-		Authentication auth =SecurityContextHolder.getContext().getAuthentication();
-		if(auth!=null){
-		new SecurityContextLogoutHandler().logout(request,response,auth);	
+
+	@RequestMapping(value = "/perform-logout")
+	public String logout(HttpServletRequest request, HttpServletResponse response) {
+		// fetching the authentication
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		if (auth != null) {
+			new SecurityContextLogoutHandler().logout(request, response, auth);
 		}
 		return "redirect:/login?logout";
-		
+
 	}
-	
-
-	
-
 
 }

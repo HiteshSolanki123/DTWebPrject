@@ -13,12 +13,14 @@ import org.springframework.stereotype.Service;
 
 import com.niit.model.Bill;
 import com.niit.model.Cart;
+import com.niit.model.Payment;
+
 @Service
 @Repository("billDAO")
-public class BillDaoImpl implements BillDao{
+public class BillDaoImpl implements BillDao {
 	@Autowired
 	private SessionFactory sessionFactory;
-	
+
 	@Transactional
 	public boolean addBill(Bill bill) {
 		try {
@@ -30,14 +32,16 @@ public class BillDaoImpl implements BillDao{
 			return false;
 		}
 	}
+
 	@Transactional
 	public Bill getBill(int billsId) {
 		Session session = sessionFactory.openSession();
 		Bill bill = (Bill) session.get(Bill.class, new Integer(billsId));
 		/* sessionFactory.getCurrentSession().get(Product.class,id); */
 		return bill;
-	
+
 	}
+
 	@Transactional
 	public List<Bill> getBills(String email) {
 		// TODO Auto-generated method stub
@@ -46,7 +50,15 @@ public class BillDaoImpl implements BillDao{
 		@SuppressWarnings("unchecked")
 		List<Bill> list = query.list();
 		return list;
-	
+
 	}
 
+	@Transactional
+	public Bill getEmail(String email) {
+		{
+			Bill bill = (Bill) sessionFactory.getCurrentSession().get(Bill.class, new String(email));
+			return bill;
+		}
+
+	}
 }

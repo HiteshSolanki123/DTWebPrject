@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.stereotype.Component;
 
 @Entity
@@ -19,6 +20,7 @@ public class Payment {
 	public void setPayId(int payId) {
 		this.payId = payId;
 	}
+	@NotBlank(message="enter the name of your card")
 	private String name;
 	private int cNo;
 	private int exDate;

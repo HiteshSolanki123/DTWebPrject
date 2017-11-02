@@ -4,7 +4,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Size;
 
+import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.stereotype.Component;
 
 @Entity
@@ -20,7 +22,15 @@ public class Bill {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	private String city,state,fullname,address;
+	@NotBlank(message="enter the city")
+	private String city;
+	@NotBlank(message="enter the state")
+	private String state;
+	@NotBlank(message="entert the full name")
+	private String fullname;
+	@NotBlank(message="enter your current address")
+	private String address;
+	
 	private int zipcode;
 	public String getFullname() {
 		return fullname;

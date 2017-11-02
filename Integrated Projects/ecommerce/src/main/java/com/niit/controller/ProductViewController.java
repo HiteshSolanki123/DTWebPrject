@@ -20,31 +20,6 @@ public class ProductViewController {
 
 		return new ModelAndView("product", "prod", product);
 	}
-	/*
-	@RequestMapping(value="/product/${pid}")
-	public String viewProduct(int pid)
 	
-	{
-		productDAO.getById(pid);
-		return "product";
-		
-	}
-	
-/*
-	@RequestMapping(value="/product/{pid}", method= RequestMethod.GET)
-	public ModelAndView editProduct(@PathVariable int pid)
-	{
-		ModelAndView mv=new ModelAndView("product");
-		mv.addObject("userClickAddProducts", true);
-		mv.addObject("title","Manage Products");
-		//fetch the product by product id(pid) from database
-		Product prod2=productDAO.getById(pid);
-		System.out.println("fetched"+pid);
-		//set the product from database
-		mv.addObject("product",prod2);
-		
-		return mv;
-		
-	}*/
 	
 }

@@ -33,7 +33,7 @@ public class UserController {
 	}
 
 	@PostMapping(value = "/insert")
-	public String insert(@Valid @ModelAttribute("user") User user, Model model, BindingResult results) {
+	public String insert(@Valid @ModelAttribute("user") User user, BindingResult results,Model model) {
 		{
 			if(results.hasErrors())
 			{

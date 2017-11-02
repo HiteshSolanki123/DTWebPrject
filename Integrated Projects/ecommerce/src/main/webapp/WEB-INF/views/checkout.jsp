@@ -5,28 +5,40 @@
 <jsp:include page="Header.jsp"></jsp:include>
 
 <html>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <title>Order</title>
 
 
 <form:form modelAttribute="bill" method="POST" action="${cp}/Bill/insert" >
-
-
-<form:label path="fullname" class="control-label col-xs-2">Full Name</form:label>
-<form:input path="fullname" placeholder="fullname" type="text" required="required"/>
+<div class="centered">
+<div class="centered">
+<form:label path="fullname" class="control-label col-xs-1">Full Name</form:label><div class="col-xs-2"> 
+<form:input path="fullname" class="form-control" placeholder="fullname"  /><form:errors path="fullname"/>
+</div></div>
+<br></br><br></br>
+<div class="form-group">
+<form:label path="address" class="control-label col-xs-1">Address</form:label><div class="col-xs-2"> 
+<form:input path="address"  class="form-control" placeholder="address"  /><form:errors path="address"/>
+</div></div>
 <br></br>
-
-<form:label path="address" class="control-label col-xs-2">Address</form:label>
-<form:input path="address"  placeholder="address" type="text" required="required"/>
+<div class="form-group">
+<form:label path="state" class="control-label col-xs-1">State</form:label><div class="col-xs-2"> 
+<form:input path="state" class="form-control" name="state" placeholder="state" /><form:errors path="state"/>
+</div></div>
 <br></br>
-<form:label path="state" class="control-label col-xs-2">State</form:label>
-<form:input path="state" name="state" placeholder="state" type="text" required="required"/>
+<div class="form-group">
+<form:label path="city" class="control-label col-xs-1">City</form:label><div class="col-xs-2"> 
+<form:input path="city"  class="form-control" name="city" placeholder="city" /><form:errors path="city"/>
+</div></div>
 <br></br>
-<form:label path="city" class="control-label col-xs-2">City</form:label>
-<form:input path="city" name="city" placeholder="city" type="text" required="required"/>
-<br></br>
-<form:label path="zipcode" class="control-label col-xs-2">Zipcode</form:label>
-<form:input path="zipcode" name="zipcode" placeholder="zipcode" type="number" maxlength="6" minlength="6" required="required"/>
+<div class="form-group">
+<form:label path="zipcode" class="control-label col-xs-1">Zipcode</form:label><div class="col-xs-2"> 
+<form:input path="zipcode" class="form-control" name="zipcode" placeholder="zipcode" required="required"/>
+</div></div></div>
 <br></br>
 <form:hidden path="billsId"></form:hidden>
 <form:button type="submit" class="btn btn-lg btn-info">SAVE</form:button>

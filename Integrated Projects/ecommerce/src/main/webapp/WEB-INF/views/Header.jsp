@@ -47,6 +47,8 @@
 				<!-- Only admin can view this link -->
 				<security:authorize access="hasRole('ROLE_ADMIN')">
 					<li><a href=" <c:url value="/Admin/" />">Add Product</a></li>
+					<li><a href="<c:url value="/cart/" />"><span
+								class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
 					<li><a href="<c:url value="${cp}/perform-logout" />"><span
 							class="glyphicon glyphicon-log-out"></span> Logout</a></li>
 					

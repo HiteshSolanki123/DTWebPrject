@@ -33,14 +33,14 @@ public class PaymentController {
 	}
 	
 	@PostMapping(value = "/insert")
-	public String insert(@ModelAttribute("payment") Payment payment, Model model, BindingResult results) {
+	public String insert(@ModelAttribute("payment") Payment payment, BindingResult results, Model model) {
 		{
 			String email = SecurityContextHolder.getContext().getAuthentication().getName();
 			payment.setEmail(email);
 			paymentDAO.addPay(payment);
-			return "redirect:/thankyou/";
+			return "redirect:/confirm/";
 
 		}
 	}
-
+	
 }

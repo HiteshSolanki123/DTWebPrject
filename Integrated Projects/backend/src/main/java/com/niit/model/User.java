@@ -1,10 +1,13 @@
 package com.niit.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Size;
 
+import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.stereotype.Component;
 
@@ -15,8 +18,21 @@ public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int uid;
-	
+	@NotBlank(message = "please enter the firstname")
+	private String firstname;
+	@NotBlank(message = "please enter the lastname")
+	private String lastname;
+	@NotBlank
+	@Size(min=6,max=12,message="password should be between 6-12 characters")
+	private String password;
+	@NotBlank(message = "please enter the Phone number")
+	@Size(min=10,max=10,message="digit should be 10")
+	private String phone;
+	private boolean enabled;
+	@Column(unique=true)
+	@Email(message="enter the valid email")
 	private String email;
+
 	public String getEmail() {
 		return email;
 	}
@@ -24,7 +40,6 @@ public class User {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	private String phone;
 
 	public String getPhone() {
 		return phone;
@@ -49,14 +64,6 @@ public class User {
 	public void setLastname(String lastname) {
 		this.lastname = lastname;
 	}
-	@NotBlank(message="please enter the name")
-	private String firstname;
-	@NotBlank(message="please enter the name")
-	private String lastname;
-
-	private String password;
-
-	private boolean enabled;
 
 	public boolean isEnabled() {
 		return enabled;
@@ -83,8 +90,6 @@ public class User {
 	public void setUid(int uid) {
 		this.uid = uid;
 	}
-
-	
 
 	public String getPassword() {
 		return password;

@@ -51,24 +51,7 @@ public class UserDaoImpl implements UserDao
 		return null;
 	}
 
-	public boolean vaildate(String user, String password) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	public User get(String name) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public Object getAll() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	public User getUById(int customerId) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
  
 	
 }

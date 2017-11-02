@@ -1,8 +1,7 @@
 package com.niit.controller;
 
-import java.util.List;
-
 import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -42,9 +41,12 @@ public class BillController {
 		return new ModelAndView("checkout", "Bill", bill);
 		}
 	@PostMapping(value = "/insert")
-	public String insert(@ModelAttribute("bill") Bill bill, Model model, BindingResult results) {
+	public String insert(@Valid @ModelAttribute("bill") Bill bill , BindingResult results, Model model ) {
 		{
-			
+			if(results.hasErrors())
+			{
+				return "checkout";
+			}
 			String email = SecurityContextHolder.getContext().getAuthentication().getName();
 			bill.setEmail(email);
 			

@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
-import com.niit.model.Cart;
 import com.niit.model.Payment;
 @Service
 @Repository("paymentDAO")
@@ -36,6 +35,13 @@ public class PaymentDaoImpl implements PaymentDao{
 		@SuppressWarnings("unchecked")
 		List<Payment> list = query.list();
 		return list;
+	}
+	@Transactional
+	public Payment getEmail(String email) {
+		{
+			Payment payment =(Payment) sessionFactory.getCurrentSession().get(Payment.class, new String(email));	
+			return payment;
+		}
 	}
 
 }

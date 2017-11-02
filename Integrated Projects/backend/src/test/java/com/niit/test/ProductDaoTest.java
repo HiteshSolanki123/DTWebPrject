@@ -23,39 +23,39 @@ public class ProductDaoTest {
 	@Test
 	public void addProductTest() {
 		Product p = new Product();
-		p.setCategory_id("s1");
+		
 		p.setDesc("best prodcut");
 		p.setPid(20);
 		p.setPname("exhaust");
 		p.setPrice(50000);
 		p.setQuantity(200);
-		p.setSupplier_id("s20");
+		
 		/*assertTrue("problem in productDao", productDao.addProduct(p));*/
 	}
 
 	@Test
 	public void saveOrUpdateTest() {
 		Product p = new Product();
-		p.setCategory_id("s1");
+		
 		p.setDesc("best prodcut");
 		p.setPid(20);
 		p.setPname("exhaust");
 		p.setPrice(50000);
 		p.setQuantity(200);
-		p.setSupplier_id("s20");
+		
 		/*assertTrue("problem in productDao", productDao.saveOrUpdate(p));*/
 	}
 
 	@Test
 	public void deleteTest() {
 		Product product = new Product();
-		product.setCategory_id("s1");
+	
 		product.setDesc("best prodcut");
 		product.setPid(20);
 		product.setPname("exhaust");
 		product.setPrice(50000);
 		product.setQuantity(200);
-		product.setSupplier_id("s20");
+		
 		/*assertTrue("problem in productDao", productDao.delete(product));*/
 	}
 }

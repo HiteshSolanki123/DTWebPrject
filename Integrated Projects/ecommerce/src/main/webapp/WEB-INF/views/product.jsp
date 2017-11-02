@@ -13,7 +13,7 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <html>
-<head><title>Hi</title></head>
+<head><title>Bikers Shop</title></head>
 
 <body>
 
@@ -22,7 +22,7 @@
 <table align="center">
 <tr><td class=center style="width: 171px"><img
 				src="${pageContext.request.contextPath}/resources/images/product/${prod.pid}.jpg"
-				style="width: 550px; height: 350px;"></td>
+				style="width: 550px; height:400px;"></td>
 <tr><td><p><b>Product Name : ${prod.pname}</b></p></td></tr>
 <tr><td><p><b> Description : ${prod.desc }</b></p></td></tr>
 <tr><td><p><b> Manufacturer: ${prod.manufacturer }</b></p></td></tr>
