@@ -15,9 +15,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 </head>
-<body><center>
-<p><font size="9" color="green">THANK YOU For Shopping </font></p>
-<li><a href="${cp }/Home" >Back To Shopping</a></li>
+<body><center><div class="item">
+				<img src="${cp}/resources/images/sm.png" alt="Chania"
+					style="height: 200px; width: 190px; overflow: hidden; cursor: pointer">
+			</div>
+
+<p><font size="9" color="green">THANK YOU For Shopping 	</font></p>
+<li><a href="${cp }/Home" ><font size="5"><u>Back To Shopping</u></font></a></li>
 </center>
 </body>
 </html>

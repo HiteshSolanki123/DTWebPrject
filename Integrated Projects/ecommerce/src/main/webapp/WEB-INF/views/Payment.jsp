@@ -90,7 +90,7 @@
 							
 								<div class="form-group-center">
 									<div class="col-xs-offset-2 col-xs-10">
-									<a class="btn btn-lg btn-info" href="${cp}/confirm/${pageContext.request.userPrincipal.name}" > Submit</a>
+									<a class="btn btn-lg btn-info" href="${cp}/Payment/confirm/${pageContext.request.userPrincipal.name}" > Submit</a>
 										
 										<form:button type="reset" class="btn btn-lg btn-info">RESET</form:button>
 									</div>

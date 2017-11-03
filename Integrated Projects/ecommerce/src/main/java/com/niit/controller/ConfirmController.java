@@ -11,19 +11,7 @@ import com.niit.dao.BillDao;
 import com.niit.dao.CartDao;
 import com.niit.model.Bill;
 
-@Controller
 public class ConfirmController {
-	@Autowired
-	BillDao billDAO;
-	@Autowired
-	CartDao cartDao;
-	@RequestMapping(value={"/confirm/{email"})
-	@ResponseBody ModelAndView getById(@PathVariable String email) {
-		ModelAndView model=new ModelAndView("confirm"); 
-		Bill bill = billDAO.getEmail(email);
-		
-		model.addObject("bill", bill);
-		model.addObject("cartP", cartDao.getCartItems(email));
-		return model;
-}
+	
+	
 }

@@ -52,12 +52,12 @@ public class BillDaoImpl implements BillDao {
 		return list;
 
 	}
-
 	@Transactional
 	public Bill getEmail(String email) {
 		{
 			Bill bill = (Bill) sessionFactory.getCurrentSession().get(Bill.class, new String(email));
-			return bill;
+			return bill;			
+			 
 		}
 
 	}
