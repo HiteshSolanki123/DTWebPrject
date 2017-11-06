@@ -37,41 +37,34 @@ public class PaymentController {
 	BillDao billDAO;
 	@Autowired
 	CartDao cartDao;
-	
+
 	@RequestMapping("/")
 	public String Payment(Model model) {
 		model.addAttribute("payment", new Payment());
 		return "Payment";
-	}/*
-	@RequestMapping(value={"/confirm/{email}"})
-	public ModelAndView getById(@PathVariable String email) 
-	{		
-		List<Bill> bill = billDAO.getBills(email);
-		System.out.println("Email : "+email);
-		return new ModelAndView("confirm","bill", bill);
-	}*/
-	@RequestMapping(value = { "/confirm/{email}" })
-	public ModelAndView confirm() {
-		//for fetching the current user login
-		String email = SecurityContextHolder.getContext().getAuthentication().getName();
-		//fetching the email from the cart table
-		List<Bill> bill = billDAO.getBills(email);
-		
-		return new ModelAndView("confirm", "bill", bill);
-
 	}
 
-	
+	@RequestMapping(value = { "/confirm/{email}" })
+	public ModelAndView confirm() {
+		// for fetching the current user login
+		String email = SecurityContextHolder.getContext().getAuthentication().getName();
+		// fetching the email from the cart table
+		List<Bill> bill = billDAO.getBills(email);
+
+		return new ModelAndView("confirm", "bill", bill);
+	}
+
 	@PostMapping(value = "/insert")
 	public String insert(@ModelAttribute("payment") Payment payment, BindingResult results, Model model) {
 		{
+			// for fetching the current user login
 			String email = SecurityContextHolder.getContext().getAuthentication().getName();
 			payment.setEmail(email);
+			//inserting the data in payment table
 			paymentDAO.addPay(payment);
 			return "redirect:/confirm/{email}";
 
 		}
 	}
-	
-	
+
 }

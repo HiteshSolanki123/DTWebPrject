@@ -14,8 +14,8 @@
 
 
 <form:form modelAttribute="bill" method="POST" action="${cp}/Bill/insert" >
-<div class="centered">
-<div class="centered">
+<div class="center">
+<div class="center">
 <form:label path="fullname" class="control-label col-xs-1">Full Name</form:label><div class="col-xs-2"> 
 <form:input path="fullname" class="form-control" placeholder="fullname"  /><form:errors path="fullname"/>
 </div></div>
@@ -41,7 +41,7 @@
 </div></div></div>
 <br></br>
 <form:hidden path="billsId"></form:hidden>
-<form:button type="submit" class="btn btn-lg btn-info">SAVE</form:button>
-<form:button type="reset" class="btn btn-lg btn-info">RESET</form:button>
+<form:button type="submit" class="btn btn-lg btn-info"> SAVE</form:button>
+<form:button type="reset" class="btn btn-lg btn-info"> RESET</form:button>
 </form:form>
 </html>

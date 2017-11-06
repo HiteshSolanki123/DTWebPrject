@@ -11,9 +11,10 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <title>Contact Us</title>
 </head>
-<body>
-<p>Mobile no:9898989898</p>
-<p>Mail Id:Shop@rocketmail.com</p>
+<body><center>
+<p><b><font size="5" color="black">Mobile no:9898989898</font></b></p>
+<p><b><font size="5" color="black">Mail Id:Shop@rocketmail.com</font></b></p>
+</center>
 </body>
 </html>
 <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>

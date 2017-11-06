@@ -1,7 +1,7 @@
 
 		<!--Starting Footer-->
         <footer class="container-fluid">
-            <h5>@NIIT E-Commerce Case Study</h5>
+            <h5><b>@Biker's Shop E-commercial Website</b></h5>
         </footer>
         <!--Ending Footer-->
         

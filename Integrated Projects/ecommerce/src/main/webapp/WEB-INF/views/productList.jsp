@@ -39,10 +39,10 @@
 					<a class="btn btn-success btn-product" href="cart/${prod.pid}"><span
 						class="glyphicon glyphicon-shopping-cart"></span> Add to cart</a>
 				</td>
-				<td><security:authorize access="hasRole('ROLE_USER')">
+				<td>
 					<a class="btn btn-success btn-product" href="${cp}/product/${prod.pid}"><span
 						class="glyphicon glyphicon-shopping-cart"></span> View Details</a>
-				</security:authorize></td>
+				</td>
 				
 			<td><security:authorize access="hasRole('ROLE_ADMIN')">
 					<a class="btn btn-success btn-product" href="${cp}/deletePro/${prod.pid}"><span
@@ -57,3 +57,4 @@
 	</c:forEach>
 	</form>
 </table>
+<jsp:include page="Footer.jsp"></jsp:include>

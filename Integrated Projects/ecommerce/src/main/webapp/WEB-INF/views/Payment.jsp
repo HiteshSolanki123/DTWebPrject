@@ -100,4 +100,7 @@
 						</div></div>
 				</form:form>
 				</html>
-				
+				<br/>
+				<br/>
+				<br/><br/>
+				<jsp:include page="Footer.jsp"></jsp:include>
